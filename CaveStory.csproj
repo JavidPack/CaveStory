@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DF88634-4874-484A-B972-688E618FD245}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cave Story</RootNamespace>
+    <AssemblyName>Cave Story</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\VideoGameHacking\Terraria\tModLoader\src\tModLoader\Terraria.csproj">
+      <Project>{3996d5fa-6e59-4fe4-9f2b-40eeef9645d5}</Project>
+      <Name>Terraria</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CaveStory.cs" />
+    <Compile Include="Dusts\BoosterSmoke.cs" />
+    <Compile Include="Dusts\BubblineLv12Pop.cs" />
+    <Compile Include="Dusts\NemesisSmoke.cs" />
+    <Compile Include="Dusts\StarMuzzleFlash.cs" />
+    <Compile Include="Dusts\BubblinePop.cs" />
+    <Compile Include="Items\BoosterVPointEight.cs" />
+    <Compile Include="Items\Bubbline.cs" />
+    <Compile Include="Items\BubblineExp.cs" />
+    <Compile Include="Items\CaveStoryExperience.cs" />
+    <Compile Include="Items\Fireball.cs" />
+    <Compile Include="Items\FireballExp.cs" />
+    <Compile Include="Items\MachineGun.cs" />
+    <Compile Include="Items\MachineGunExp.cs" />
+    <Compile Include="Items\Nemesis.cs" />
+    <Compile Include="Items\NemesisExp.cs" />
+    <Compile Include="Items\TowRope.cs" />
+    <Compile Include="Mounts\CurlyBrace.cs" />
+    <Compile Include="NPCs\ExpDrop.cs" />
+    <Compile Include="Projectiles\BubbleProjectile.cs" />
+    <Compile Include="Projectiles\BubbleProjectileFlying.cs" />
+    <Compile Include="Projectiles\BubblineLv1Shot.cs" />
+    <Compile Include="Projectiles\BubblineLv2Shot.cs" />
+    <Compile Include="Projectiles\FireballLv1Shot.cs" />
+    <Compile Include="Projectiles\FireballLv2Shot.cs" />
+    <Compile Include="Projectiles\FireballLv3Shot.cs" />
+    <Compile Include="Projectiles\MachineGunLv3Shot.cs" />
+    <Compile Include="Projectiles\NemesisLv3Shot.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sounds\Item\BoosterSound.wav" />
+    <Content Include="Sounds\Item\BubblineFire.wav" />
+    <Content Include="Sounds\Item\BubblinePopSound.wav" />
+    <Content Include="Sounds\Item\FireballSound.wav" />
+    <Content Include="Sounds\Item\MachineGunShoot.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\XNA Framework Dlls\Microsoft.Xna.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\XNA Framework Dlls\Microsoft.Xna.Framework.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\XNA Framework Dlls\Microsoft.Xna.Framework.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\XNA Framework Dlls\Microsoft.Xna.Framework.Xact.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
