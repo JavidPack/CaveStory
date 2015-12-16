@@ -13,8 +13,8 @@ namespace CaveStory.Mounts
         public override void SetDefaults()
         {
             // Dust on Spawn?
-            mountData.spawnDust = 26;
-            // Should spawn a small amount of dust instead of 56
+            mountData.spawnDust = 56;
+            // I was wrong here
             // Buff Applied while in use
 			//ErrorLogger.Log("~~" + mountData.buff);
           //  mountData.buff = mod.BuffType("CurlyBraceBuff");//130;
