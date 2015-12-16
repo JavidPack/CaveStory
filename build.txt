@@ -1,0 +1,3 @@
+author = jopojelly
+version = v0.2b
+displayName = Cave Story
