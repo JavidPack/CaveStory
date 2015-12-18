@@ -81,7 +81,6 @@ namespace CaveStory.Items
                         int arg_5D0E_0 = player.body;
                     }
                    /// float scale = 1.75f;
-                    int alpha = 100;
                     float x3 = player.position.X + (float)(player.width / 2) + 16f;
                     if (player.direction > 0)
                     {

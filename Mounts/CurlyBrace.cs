@@ -21,10 +21,13 @@ namespace CaveStory.Mounts
           //  ErrorLogger.Log("SetDefaults mod.buffType: " + mod.BuffType("CurlyBraceBuff"));
           // mod.BuffType("CurlyBraceBuff");
             // Pixels above ground of mount image while in use?
+            // mountData.heightBoost raises the player's hitbox, so if this is left to zero, no raise will happen
             mountData.heightBoost = 0;
             //??
+            // I think this enables mount flight, but it should be the wings or any other fight accessory that apply flight, not the mount
             mountData.flightTimeMax = 0;
             //??
+            // Might want to make sure the player takes fall damage, because if the player doesn't have wings, he/she will take FD when he/she falls from a high heigh.
             mountData.fallDamage = 0.5f;
             //??
             mountData.runSpeed = 4f;
@@ -91,7 +94,6 @@ namespace CaveStory.Mounts
             }
 
 
-            int dir = 0;
             if (relativeX - relativeY > 0)
             {
                 if (relativeX + relativeY > 0)
@@ -113,7 +115,7 @@ namespace CaveStory.Mounts
                         mountedPlayer.mount._frame = 2;
                         mountData.xOffset = 0;
                         mountData.yOffset = 20;
-                        
+
                     }
                 }
             }
@@ -135,7 +137,7 @@ namespace CaveStory.Mounts
             return false;
         }
 
-       
+
 
         bool used = false;
         public override void UpdateEffects(Player mountedPlayer)
@@ -148,7 +150,7 @@ namespace CaveStory.Mounts
                     used = false;
                 }
 
-                //if(mountedPlayer.jump == 0) 
+                //if(mountedPlayer.jump == 0)
                 //    mountedPlayer.mount.
 
                 //mountedPlayer.mount._abilityCharging = false;
@@ -201,7 +203,7 @@ namespace CaveStory.Mounts
                             dir = 1;
                             relativeY = 12;
                             relativeX = 0;
-                         
+
                             //    position.X += player.direction * 10f * item.scale;
                         }
                         else
@@ -218,6 +220,7 @@ namespace CaveStory.Mounts
                     relativeY = -relativeY;
 
                     //   position += Vector2.Normalize(new Vector2(speedX, speedY)) * 40f * item.scale;
+                    // I don't see where the knockback(KB) is at, because the mount does too much KB
                     int a = Projectile.NewProjectile(center.X, center.Y, relativeX, relativeY, mod.ProjectileType("NemesisLv3Shot"), 100, 100, Main.myPlayer, 0f, 0f);
                     Main.projectile[a].scale = 2;
                     Main.projectile[a].rotation = Main.projectile[a].velocity.ToRotation();
@@ -225,7 +228,7 @@ namespace CaveStory.Mounts
                 }
             }
 
-            
+
 
         }
     }
@@ -278,6 +281,3 @@ namespace CaveStory.Mounts
 //    }
 //    this.AimAbility(mountedPlayer, vector);
 // this._abilityCharging = true;
-
-
-
