@@ -14,7 +14,6 @@ namespace CaveStory.Mounts
         {
             // Dust on Spawn?
             mountData.spawnDust = 56;
-            // I was wrong here
             // Buff Applied while in use
 			//ErrorLogger.Log("~~" + mountData.buff);
           //  mountData.buff = mod.BuffType("CurlyBraceBuff");//130;
@@ -25,10 +24,10 @@ namespace CaveStory.Mounts
             // mountData.heightBoost raises the player's hitbox, so if this is left to zero, no raise will happen
             mountData.heightBoost = 0;
             //??
-            // I think this enables mount flight, but it should be the wings or any other fight accessory the apply flight, not the mount
+            // I think this enables mount flight, but it should be the wings or any other fight accessory that apply flight, not the mount
             mountData.flightTimeMax = 0;
             //??
-            // Might want to make sure the player takes fall damage, because if the player doesn't have wings, he/she won't take FD when he/she falls from a high heigh.
+            // Might want to make sure the player takes fall damage, because if the player doesn't have wings, he/she will take FD when he/she falls from a high heigh.
             mountData.fallDamage = 0.5f;
             //??
             mountData.runSpeed = 4f;
@@ -95,7 +94,6 @@ namespace CaveStory.Mounts
             }
 
 
-            int dir = 0;
             if (relativeX - relativeY > 0)
             {
                 if (relativeX + relativeY > 0)
@@ -117,7 +115,7 @@ namespace CaveStory.Mounts
                         mountedPlayer.mount._frame = 2;
                         mountData.xOffset = 0;
                         mountData.yOffset = 20;
-                        
+
                     }
                 }
             }
@@ -139,7 +137,7 @@ namespace CaveStory.Mounts
             return false;
         }
 
-       
+
 
         bool used = false;
         public override void UpdateEffects(Player mountedPlayer)
@@ -152,7 +150,7 @@ namespace CaveStory.Mounts
                     used = false;
                 }
 
-                //if(mountedPlayer.jump == 0) 
+                //if(mountedPlayer.jump == 0)
                 //    mountedPlayer.mount.
 
                 //mountedPlayer.mount._abilityCharging = false;
@@ -205,7 +203,7 @@ namespace CaveStory.Mounts
                             dir = 1;
                             relativeY = 12;
                             relativeX = 0;
-                         
+
                             //    position.X += player.direction * 10f * item.scale;
                         }
                         else
@@ -230,7 +228,7 @@ namespace CaveStory.Mounts
                 }
             }
 
-            
+
 
         }
     }
@@ -283,6 +281,3 @@ namespace CaveStory.Mounts
 //    }
 //    this.AimAbility(mountedPlayer, vector);
 // this._abilityCharging = true;
-
-
-
