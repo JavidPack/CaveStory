@@ -28,10 +28,8 @@ namespace CaveStory.NPCs
 			npc.lavaImmune = true;
 			npc.noGravity = true;
 			npc.noTileCollide = false;
-			npc.soundHit = 5;
-      // I don't have the desired sound file here
-			npc.soundKilled = 7;
-      // I don't have the sound files I want to put here in npc.soundKilled
+			//npc.soundHit = Sounds.NPCHit.EnemyHurtSqueak.wav;
+			//npc.soundKilled = Sounds.NPCHit.EnemyHurtSqueak.wav;
 			bannerItem = mod.ItemType("RedBatBanner");
 		}
   }
