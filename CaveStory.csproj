@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\..\VideoGameHacking\Terraria\tModLoader\src\tModLoader\Terraria.csproj">
@@ -48,6 +49,7 @@
     <Compile Include="Dusts\NemesisSmoke.cs" />
     <Compile Include="Dusts\StarMuzzleFlash.cs" />
     <Compile Include="Dusts\BubblinePop.cs" />
+    <Compile Include="Items\Banners\RedBatBanner.cs" />
     <Compile Include="Items\BoosterVPointEight.cs" />
     <Compile Include="Items\Bubbline.cs" />
     <Compile Include="Items\BubblineExp.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="Items\TowRope.cs" />
     <Compile Include="Mounts\CurlyBrace.cs" />
     <Compile Include="NPCs\ExpDrop.cs" />
+    <Compile Include="NPCs\RedBat.cs" />
     <Compile Include="Projectiles\BubbleProjectile.cs" />
     <Compile Include="Projectiles\BubbleProjectileFlying.cs" />
     <Compile Include="Projectiles\BubblineLv1Shot.cs" />
@@ -70,13 +73,20 @@
     <Compile Include="Projectiles\FireballLv3Shot.cs" />
     <Compile Include="Projectiles\MachineGunLv3Shot.cs" />
     <Compile Include="Projectiles\NemesisLv3Shot.cs" />
+    <Compile Include="Tiles\MonsterBanner.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="build.txt" />
     <Content Include="Sounds\Item\BoosterSound.wav" />
     <Content Include="Sounds\Item\BubblineFire.wav" />
     <Content Include="Sounds\Item\BubblinePopSound.wav" />
     <Content Include="Sounds\Item\FireballSound.wav" />
     <Content Include="Sounds\Item\MachineGunShoot.wav" />
+    <Content Include="Sounds\NPCHit\EnemyHurt.wav" />
+    <Content Include="Sounds\NPCHit\EnemyHurtBig.wav" />
+    <Content Include="Sounds\NPCHit\EnemyHurtCool.wav" />
+    <Content Include="Sounds\NPCHit\EnemyHurtSmall.wav" />
+    <Content Include="Sounds\NPCHit\EnemyHurtSqueak.wav" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
@@ -97,7 +107,11 @@
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Sounds\Custom\" />
+    <Folder Include="Sounds\Music\" />
+    <Folder Include="Sounds\NPCKilled\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
