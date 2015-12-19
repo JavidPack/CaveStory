@@ -8,7 +8,7 @@ namespace CaveStory.NPCs
 {
 	public class RedBat : ModNPC
 	{
-    public override void SetDefaults()
+		public override void SetDefaults()
 		{
 			npc.name = "Red Bat";
 			npc.displayName = "Red Bat";
@@ -28,9 +28,15 @@ namespace CaveStory.NPCs
 			npc.lavaImmune = true;
 			npc.noGravity = true;
 			npc.noTileCollide = false;
-			//npc.soundHit = Sounds.NPCHit.EnemyHurtSqueak.wav;
-			//npc.soundKilled = Sounds.NPCHit.EnemyHurtSqueak.wav;
+			npc.soundHit = mod.GetSoundSlot(SoundType.NPCHit, "Sounds/NPCHit/EnemyHurtSqueak");
+			//npc.soundKilled = mod.GetSoundSlot(SoundType.NPCKilled, "Sounds/NPCKilled/???");
 			bannerItem = mod.ItemType("RedBatBanner");
 		}
-  }
+
+		public override float CanSpawn(NPCSpawnInfo spawnInfo)
+		{
+			//Tile tile = Main.tile[spawnInfo.spawnTileX, spawnInfo.spawnTileY];
+			return spawnInfo.spawnTileY > Main.maxTilesY - 190 ? 100f : 0f;
+		}
+	}
 }

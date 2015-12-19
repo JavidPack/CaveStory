@@ -17,11 +17,12 @@ namespace CaveStory.Tiles
 			Main.tileLavaDeath[Type] = true;
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2Top);
 			TileObjectData.newTile.Height = 3;
-			TileObjectData.newTile.CoordinateHeights = new int[]{ 16, 16, 16 };
+			TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16 };
 			TileObjectData.newTile.StyleHorizontal = true;
 			TileObjectData.newTile.StyleWrapLimit = 111;
 			TileObjectData.addTile(Type);
 			dustType = -1;
+			disableSmartCursor = true;
 			AddMapEntry(new Color(13, 88, 130), "Banner");
 		}
 
@@ -32,7 +33,7 @@ namespace CaveStory.Tiles
 			switch (style)
 			{
 				case 0:
-					item = "RedBat";
+					item = "RedBatBanner";
 					break;
 				default:
 					return;

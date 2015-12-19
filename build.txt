@@ -1,3 +1,3 @@
-author = jopojelly;Vetpetmon
-version = v0.2.0.1b
+author = jopojelly; Vetpetmon
+version = v0.2.0.1
 displayName = Cave Story
