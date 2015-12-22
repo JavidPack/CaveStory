@@ -63,6 +63,7 @@
     <Compile Include="Items\TowRope.cs" />
     <Compile Include="Mounts\CurlyBrace.cs" />
     <Compile Include="NPCs\ExpDrop.cs" />
+    <Compile Include="NPCs\GreenCritter.cs" />
     <Compile Include="NPCs\RedBat.cs" />
     <Compile Include="Projectiles\BubbleProjectile.cs" />
     <Compile Include="Projectiles\BubbleProjectileFlying.cs" />
