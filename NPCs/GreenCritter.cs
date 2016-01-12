@@ -36,7 +36,8 @@ namespace CaveStory.NPCs
 
 		public override float CanSpawn(NPCSpawnInfo spawnInfo)
 		{
-			return 1000f;
+			return spawnInfo.spawnTileY < Main.worldSurface + 100 ? .3f : 0f;
+			//return 1000f;
 		}
 
 		public override void AI()

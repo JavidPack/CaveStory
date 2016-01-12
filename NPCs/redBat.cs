@@ -40,8 +40,8 @@ namespace CaveStory.NPCs
 		public override float CanSpawn(NPCSpawnInfo spawnInfo)
 		{
 			//Tile tile = Main.tile[spawnInfo.spawnTileX, spawnInfo.spawnTileY];
-			return 1f;
-			//return spawnInfo.spawnTileY > Main.maxTilesY - 190 ? 100f : 0f;
+			//return 1f;
+			return spawnInfo.spawnTileY > Main.maxTilesY - 190 ? .3f : 0f;
 		}
 	}
 }

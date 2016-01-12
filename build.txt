@@ -1,3 +1,4 @@
 author = jopojelly; Vetpetmon
-version = v0.2.0.1
+version = v0.2.0.2
 displayName = Cave Story
+homepage = http://forums.terraria.org/index.php?threads/cave-story.32682/
