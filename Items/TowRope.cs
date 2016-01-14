@@ -7,7 +7,6 @@ namespace CaveStory.Items
 	{
 		public override void SetDefaults()
 		{
-
 			item.useStyle = 1;
 			item.name = "Tow Rope";
 			item.width = 16;
@@ -24,7 +23,6 @@ namespace CaveStory.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddCraftGroup(CraftGroup.IronBar, 10);
-			//recipe.AddCraftGroup(CraftGroup.GetVanillaGroup("IronBar"), 10);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

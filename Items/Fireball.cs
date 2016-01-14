@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -43,6 +44,11 @@ namespace CaveStory.Items
 
 
 			return false;
+		}
+
+		public override void PostDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
+		{
+			WeaponUtilities.DrawExperienceBar(this);
 		}
 
 		// Shoot: aim up: small in facing + player velocity
@@ -346,27 +352,8 @@ namespace CaveStory.Items
 
 		private int CurrentLevel(Player player)
 		{
-			int num = 0;
-			if (player.HasItem(mod.ItemType("FireballExp")))
-			{
-				for (int i = 0; i < player.inventory.GetLength(0); i++)
-				{
-					if (player.inventory[i].type == mod.ItemType("FireballExp"))
-					{
-						num += 1 * player.inventory[i].stack;
-					}
-				}
-			}
-			if (num >= 40)
-			{
-				return 3;
-			}
-			else if (num >= 20)
-			{
-				return 2;
-			}
-			else
-				return 1;
+			CaveStoryPlayer modPlayer = (CaveStoryPlayer)player.GetModPlayer(mod, "CaveStoryPlayer");
+			return modPlayer.FireballLevel;
 		}
 	}
 }

@@ -33,6 +33,11 @@ namespace CaveStory.Items
 			item.knockBack = 3f;
 		}
 
+		public override void PostDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
+		{
+			WeaponUtilities.DrawExperienceBar(this);
+		}
+
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			if (speedX - speedY > 0)
@@ -290,21 +295,6 @@ namespace CaveStory.Items
 			//recipe = new ModRecipe(mod);
 			//recipe.AddIngredient(Terraria.ID.ItemID.DirtBlock, 1);
 			//recipe.SetResult(Terraria.ID.ItemID.IchorBullet, 999);
-			//recipe.AddRecipe();
-
-			//recipe = new ModRecipe(mod);
-			//recipe.AddIngredient(Terraria.ID.ItemID.DirtBlock);
-			//recipe.SetResult(mod, "MachineGunExp", 10);
-			//recipe.AddRecipe();
-
-			//recipe = new ModRecipe(mod);
-			//recipe.AddIngredient(Terraria.ID.ItemID.DirtBlock, 1);
-			//recipe.SetResult(Terraria.ID.ItemID.GravitationPotion, 10);
-			//recipe.AddRecipe();
-
-			//recipe = new ModRecipe(mod);
-			//recipe.AddIngredient(Terraria.ID.ItemID.DirtBlock, 1);
-			//recipe.SetResult(Terraria.ID.ItemID.TeleportationPotion, 10);
 			//recipe.AddRecipe();
 		}
 	}

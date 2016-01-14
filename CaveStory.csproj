@@ -33,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\..\VideoGameHacking\Terraria\tModLoader\src\tModLoader\Terraria.csproj">
       <Project>{3996d5fa-6e59-4fe4-9f2b-40eeef9645d5}</Project>
       <Name>Terraria</Name>
@@ -44,23 +40,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CaveStory.cs" />
+    <Compile Include="CaveStoryPlayer.cs" />
     <Compile Include="Dusts\BoosterSmoke.cs" />
     <Compile Include="Dusts\BubblineLv12Pop.cs" />
     <Compile Include="Dusts\NemesisSmoke.cs" />
     <Compile Include="Dusts\StarMuzzleFlash.cs" />
     <Compile Include="Dusts\BubblinePop.cs" />
+    <Compile Include="Items\Banners\GreenCritterBanner.cs" />
     <Compile Include="Items\Banners\RedBatBanner.cs" />
     <Compile Include="Items\BoosterVPointEight.cs" />
     <Compile Include="Items\Bubbline.cs" />
-    <Compile Include="Items\BubblineExp.cs" />
     <Compile Include="Items\CaveStoryExperience.cs" />
     <Compile Include="Items\Fireball.cs" />
-    <Compile Include="Items\FireballExp.cs" />
     <Compile Include="Items\MachineGun.cs" />
-    <Compile Include="Items\MachineGunExp.cs" />
     <Compile Include="Items\Nemesis.cs" />
-    <Compile Include="Items\NemesisExp.cs" />
     <Compile Include="Items\TowRope.cs" />
+    <Compile Include="Items\WeaponUtilities.cs" />
     <Compile Include="Mounts\CurlyBrace.cs" />
     <Compile Include="NPCs\ExpDrop.cs" />
     <Compile Include="NPCs\GreenCritter.cs" />
@@ -78,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="build.txt" />
+    <Content Include="description.txt" />
     <Content Include="Sounds\Item\BoosterSound.wav" />
     <Content Include="Sounds\Item\BubblineFire.wav" />
     <Content Include="Sounds\Item\BubblinePopSound.wav" />

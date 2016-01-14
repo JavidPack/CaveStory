@@ -56,27 +56,8 @@ namespace CaveStory.Items
 
 		private int CurrentLevel(Player player)
 		{
-			int num = 0;
-			if (player.HasItem(mod.ItemType("BubblineExp")))
-			{
-				for (int i = 0; i < player.inventory.GetLength(0); i++)
-				{
-					if (player.inventory[i].type == mod.ItemType("BubblineExp"))
-					{
-						num += 1 * player.inventory[i].stack;
-					}
-				}
-			}
-			if (num >= 40)
-			{
-				return 3;
-			}
-			else if (num >= 20)
-			{
-				return 2;
-			}
-			else
-				return 1;
+			CaveStoryPlayer modPlayer = (CaveStoryPlayer)player.GetModPlayer(mod, "CaveStoryPlayer");
+			return modPlayer.BubblineLevel;
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -455,7 +436,12 @@ namespace CaveStory.Items
 			}
 			return true;
 		}
+		
 
+		public override void PostDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
+		{
+			WeaponUtilities.DrawExperienceBar(this);
+		}
 
 		public override void AddRecipes()
 		{

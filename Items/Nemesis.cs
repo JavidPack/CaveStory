@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -31,6 +32,10 @@ namespace CaveStory.Items
 			item.knockBack = 3f;
 		}
 
+		public override void PostDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
+		{
+			WeaponUtilities.DrawExperienceBar(this);
+		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
@@ -151,11 +156,6 @@ namespace CaveStory.Items
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
-
-			//recipe = new ModRecipe(mod);
-			//recipe.AddIngredient(Terraria.ID.ItemID.DirtBlock);
-			//recipe.SetResult(mod, "NemesisExp", 10);
-			//recipe.AddRecipe();
 		}
 	}
 }

@@ -36,7 +36,6 @@ namespace CaveStory.Projectiles
 
 		}
 
-
 		public override void Kill(int timeLeft)
 		{
 			int dust = Dust.NewDust(projectile.Center, 0, 0, mod.DustType("BubblineLv12Pop"));

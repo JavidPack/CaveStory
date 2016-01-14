@@ -30,8 +30,8 @@ namespace CaveStory.NPCs
 			npc.noTileCollide = false;
 			npc.soundHit = mod.GetSoundSlot(SoundType.NPCHit, "Sounds/NPCHit/EnemyHurtSqueak");
 			//npc.soundKilled = mod.GetSoundSlot(SoundType.NPCKilled, "Sounds/NPCKilled/???");
-			//bannerItem = mod.ItemType("RedBatBanner");
-			//banner = npc.type;
+			bannerItem = mod.ItemType("GreenCritterBanner");
+			banner = npc.type;
 		}
 
 		public override float CanSpawn(NPCSpawnInfo spawnInfo)

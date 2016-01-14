@@ -16,27 +16,27 @@ namespace CaveStory.Items
 			item.height = 20;
 			item.value = 100;
 			item.rare = 1;
-			//   ItemID.Sets.ItemNoGravity[item.type] = true;
 			item.maxStack = 99;
 		}
 
 		public override bool OnPickup(Player player)
 		{
+			CaveStoryPlayer modPlayer = (CaveStoryPlayer)player.GetModPlayer(mod, "CaveStoryPlayer");
 			if (player.inventory[player.selectedItem].type == mod.ItemType("Fireball"))
 			{
-				player.QuickSpawnItem(mod.GetItem("FireballExp").item.type, this.item.stack);
+				modPlayer.FireballExp += this.item.stack;
 			}
 			if (player.inventory[player.selectedItem].type == mod.ItemType("MachineGun"))
 			{
-				player.QuickSpawnItem(mod.GetItem("MachineGunExp").item.type, this.item.stack);
+				modPlayer.MachineGunExp += this.item.stack;
 			}
 			if (player.inventory[player.selectedItem].type == mod.ItemType("Nemesis"))
 			{
-				player.QuickSpawnItem(mod.GetItem("NemesisExp").item.type, this.item.stack);
+				modPlayer.NemesisExp += this.item.stack;
 			}
 			if (player.inventory[player.selectedItem].type == mod.ItemType("Bubbline"))
 			{
-				player.QuickSpawnItem(mod.GetItem("BubblineExp").item.type, this.item.stack);
+				modPlayer.BubblineExp += this.item.stack;
 			}
 
 			return false;
