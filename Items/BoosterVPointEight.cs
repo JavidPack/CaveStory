@@ -34,7 +34,7 @@ namespace CaveStory.Items
 
 		//these wings use the same values as the solar wings
 
-		public override void UpdateAccessory(Player player)
+		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.wingTimeMax = 180;
 		}

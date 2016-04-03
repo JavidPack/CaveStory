@@ -185,7 +185,9 @@ namespace CaveStory
 		{
 			int loadVersion = reader.ReadInt32();
 			MachineGunExp = reader.ReadInt32();
-			BubblineExp = reader.ReadInt32();
+			int a = reader.ReadInt32();
+			ErrorLogger.Log("Exp: "+a + " PlayerName" + player.name + " objectID:" +  GetHashCode() + " Modname: " + mod.Name);
+			BubblineExp = a;
 			FireballExp = reader.ReadInt32();
 			NemesisExp = reader.ReadInt32();
 		}
