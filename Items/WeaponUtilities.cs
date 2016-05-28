@@ -18,7 +18,7 @@ namespace CaveStory.Items
 			CaveStoryPlayer modPlayer = (CaveStoryPlayer)player.GetModPlayer(modItem.mod, "CaveStoryPlayer");
 			if (player.inventory[player.selectedItem].type == modItem.item.type)
 			{
-				if (!Main.ingameOptionsWindow && !Main.playerInventory && !Main.achievementsWindow)
+				if (!Main.ingameOptionsWindow && !Main.playerInventory/* && !Main.achievementsWindow*/)
 				{
 					int xPos = 50;
 					int yPos = 140;
