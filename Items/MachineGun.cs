@@ -22,8 +22,8 @@ namespace CaveStory.Items
 			item.width = 33;
 			item.height = 15;
 			item.shoot = mod.ProjectileType("MachineGunLv3Shot");
-			item.useAmmo = 14;
-			item.useSound = mod.GetSoundSlot(SoundType.Item, "Sounds/Item/MachineGunShoot");
+			item.useAmmo = AmmoID.Bullet;
+			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/MachineGunShoot");
 			item.damage = 45;
 			item.shootSpeed = 12f; //12
 			item.noMelee = true;

@@ -35,13 +35,14 @@ namespace CaveStory.Items
 			item.shoot = mod.ProjectileType("BubbleProjectile");
 			//item.shoot = 444;
 			// 444 projectile defaults to Ai style 78, extraUpdates 1
-			item.useAmmo = 14;
+			item.useAmmo = AmmoID.Bullet;
 			//Terraria.ID.ProjectileID.Bullet
 			//     item.glowMask = (short)38;
 			// where is the code to use this?
 			//item.useSound = 126;//95;
 			//item.useSound = mod.SoundType("BubblineFire");
-			item.useSound = mod.GetSoundSlot(SoundType.Item, "Sounds/Item/BubblineFire");
+			//item.useSound = mod.GetSoundSlot(SoundType.Item, "Sounds/Item/BubblineFire");
+			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/BubblineFire");
 			item.damage = 45;
 			item.shootSpeed = 12f; //12
 			item.noMelee = true;

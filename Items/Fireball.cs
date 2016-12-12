@@ -20,8 +20,8 @@ namespace CaveStory.Items
 			item.width = 33;
 			item.height = 15;
 			item.shoot = mod.ProjectileType("FireballLv3Shot");
-			item.useAmmo = 14;
-			item.useSound = mod.GetSoundSlot(SoundType.Item, "Sounds/Item/FireballSound");
+			item.useAmmo = AmmoID.Bullet;
+			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/FireballSound");
 			//  ErrorLogger.Log("~" + item.shoot);
 			item.damage = 45;
 			item.shootSpeed = 4f; //12

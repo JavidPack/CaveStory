@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+using Terraria.DataStructures;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 
 namespace CaveStory
 {
@@ -170,23 +172,39 @@ namespace CaveStory
 			}
 		}
 
-
-
-		public override void SaveCustomData(BinaryWriter writer)
+		public override TagCompound Save()
 		{
-			writer.Write(saveVersion);
-			writer.Write(MachineGunExp);
-			writer.Write(BubblineExp);
-			writer.Write(FireballExp);
-			writer.Write(NemesisExp);
+			return new TagCompound {
+				{"MachineGunExp", MachineGunExp},
+				{"BubblineExp", BubblineExp},
+				{"FireballExp", FireballExp},
+				{"NemesisExp", NemesisExp},
+			};
 		}
 
-		public override void LoadCustomData(BinaryReader reader)
+		public override void Load(TagCompound tag)
+		{
+			MachineGunExp = tag.GetInt("MachineGunExp");
+			BubblineExp = tag.GetInt("BubblineExp");
+			FireballExp = tag.GetInt("FireballExp");
+			NemesisExp = tag.GetInt("NemesisExp");
+		}
+
+		//public override void SaveCustomData(BinaryWriter writer)
+		//{
+		//	writer.Write(saveVersion);
+		//	writer.Write(MachineGunExp);
+		//	writer.Write(BubblineExp);
+		//	writer.Write(FireballExp);
+		//	writer.Write(NemesisExp);
+		//}
+
+		public override void LoadLegacy(BinaryReader reader)
 		{
 			int loadVersion = reader.ReadInt32();
 			MachineGunExp = reader.ReadInt32();
 			int a = reader.ReadInt32();
-			ErrorLogger.Log("Exp: "+a + " PlayerName" + player.name + " objectID:" +  GetHashCode() + " Modname: " + mod.Name);
+			//ErrorLogger.Log("Exp: "+a + " PlayerName" + player.name + " objectID:" +  GetHashCode() + " Modname: " + mod.Name);
 			BubblineExp = a;
 			FireballExp = reader.ReadInt32();
 			NemesisExp = reader.ReadInt32();
@@ -197,7 +215,7 @@ namespace CaveStory
 			LoseExperience(damage);
 		}
 
-		public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref string deathText)
+		public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
 		{
 			LoseExperience(damage);
 			return true;

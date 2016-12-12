@@ -24,7 +24,7 @@ namespace CaveStory.Items
 			item.value = 10000;
 			item.rare = 2;
 			item.accessory = true;
-			item.useSound = mod.GetSoundSlot(SoundType.Item, "Sounds/Item/BoosterSound");
+			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/BoosterSound");
 
 
 

@@ -30,7 +30,7 @@ namespace CaveStory.NPCs
 			npc.lavaImmune = true;
 			npc.noGravity = true;
 			npc.noTileCollide = false;
-			npc.soundHit = mod.GetSoundSlot(SoundType.NPCHit, "Sounds/NPCHit/EnemyHurtSqueak");
+			npc.HitSound = mod.GetLegacySoundSlot(SoundType.NPCHit, "Sounds/NPCHit/EnemyHurtSqueak");
 			//npc.soundKilled = mod.GetSoundSlot(SoundType.NPCKilled, "Sounds/NPCKilled/???");
 			bannerItem = mod.ItemType("RedBatBanner");
 			banner = npc.type;

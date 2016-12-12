@@ -1,5 +1,5 @@
 author = jopojelly; Vetpetmon
-version = 0.2.1
+version = 0.2.1.1
 displayName = Cave Story
 homepage = http://forums.terraria.org/index.php?threads/cave-story.32682/
 buildIgnore = .git\*, referenceImages\*, .gitignore, .gitattributes, *.MD, *.csproj, *.user, obj\*, bin\*, 

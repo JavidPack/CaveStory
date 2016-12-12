@@ -19,9 +19,9 @@ namespace CaveStory.Items
 			// item.autoReuse = true;
 			item.width = 33;
 			item.height = 15;
-			item.shoot = mod.ProjectileType("NemesisLv3Shot");
-			item.useAmmo = 14;
-			item.useSound = mod.GetSoundSlot(SoundType.Item, "Sounds/Item/NemesisSound");
+			item.shoot = mod.ProjectileType<Projectiles.NemesisLv3Shot>();
+			item.useAmmo = AmmoID.Bullet;
+			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/NemesisSound");
 			//  ErrorLogger.Log("~" + item.shoot);
 			item.damage = 45;
 			item.shootSpeed = 12f; //12

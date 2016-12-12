@@ -11,7 +11,7 @@ namespace CaveStory.Items
 			item.name = "Tow Rope";
 			item.width = 16;
 			item.height = 30;
-			item.useSound = 81;
+			item.UseSound = SoundID.Item81;
 			item.useAnimation = 20;
 			item.toolTip = "Use to tow a special robot";
 			item.useTime = 20;

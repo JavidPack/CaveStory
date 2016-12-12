@@ -28,7 +28,7 @@ namespace CaveStory.NPCs
 			//npc.lavaImmune = true;
 			//npc.noGravity = true;
 			npc.noTileCollide = false;
-			npc.soundHit = mod.GetSoundSlot(SoundType.NPCHit, "Sounds/NPCHit/EnemyHurtSqueak");
+			npc.HitSound = mod.GetLegacySoundSlot(SoundType.NPCHit, "Sounds/NPCHit/EnemyHurtSqueak");
 			//npc.soundKilled = mod.GetSoundSlot(SoundType.NPCKilled, "Sounds/NPCKilled/???");
 			bannerItem = mod.ItemType("GreenCritterBanner");
 			banner = npc.type;
@@ -40,20 +40,30 @@ namespace CaveStory.NPCs
 			//return 1000f;
 		}
 
+		const int AI_Unused1_Slot = 0;
+		const int AI_Unused2_Slot = 1;
+		const int AI_HoverTimer_Slot = 2;
+		const int AI_State_Slot = 3;
+
+		const int State_Asleep = 0;
+		const int State_Notice = 1;
+		const int State_Jump = 2;
+		const int State_Hover = 3;
+		const int State_Fall = 4;
+
 		public override void AI()
 		{
-			if (npc.ai[3] == (int)States.Asleep)
+			if (npc.ai[AI_State_Slot] == State_Asleep)
 			{
 				npc.frame.Y = 0;
 				npc.TargetClosest(true);
 				if (npc.HasValidTarget && Main.player[npc.target].Distance(npc.Center) < 500f)
 				{
-					npc.ai[3] = (int)States.Notice;
+					npc.ai[AI_State_Slot] = State_Notice;
 				}
 			}
-			else if (npc.ai[3] == (int)States.Notice)
+			else if (npc.ai[AI_State_Slot] == State_Notice)
 			{
-				
 				if (Main.player[npc.target].Distance(npc.Center) < 250f)
 				{
 					// wind up
@@ -69,7 +79,7 @@ namespace CaveStory.NPCs
 					else if (npc.frameCounter < 30)
 					{
 						npc.frameCounter = 0;
-						npc.ai[3] = (int)States.Jump;
+						npc.ai[AI_State_Slot] = State_Jump;
 					}
 				}
 				else
@@ -80,11 +90,11 @@ namespace CaveStory.NPCs
 					npc.TargetClosest(true);
 					if (!npc.HasValidTarget ||  Main.player[npc.target].Distance(npc.Center) > 500f)
 					{
-						npc.ai[3] = (int)States.Asleep;
+						npc.ai[AI_State_Slot] = State_Asleep;
 					}
 				}
 			}
-			else if (npc.ai[3] == (int)States.Jump)
+			else if (npc.ai[AI_State_Slot] == State_Jump)
 			{
 				npc.frame.Y = 36;
 				npc.frameCounter++;
@@ -98,12 +108,12 @@ namespace CaveStory.NPCs
 				else if (npc.frameCounter > 40)
 				{
 					npc.frameCounter = 0;
-					npc.ai[3] = (int)States.Hover;
+					npc.ai[AI_State_Slot] = State_Hover;
 				}
 			}
-			else if (npc.ai[3] == (int)States.Hover)
+			else if (npc.ai[AI_State_Slot] == State_Hover)
 			{
-				npc.ai[2] += 1;
+				npc.ai[AI_HoverTimer_Slot] += 1;
 				npc.velocity += new Vector2(0, -.35f);
 				 // 54, 72, 90
 				npc.frameCounter++;
@@ -123,21 +133,21 @@ namespace CaveStory.NPCs
 				{
 					npc.frameCounter = 0;
 				}
-				if(npc.ai[2] > 100)
+				if(npc.ai[AI_HoverTimer_Slot] > 100)
 				{
-					npc.ai[2] = 0;
+					npc.ai[AI_HoverTimer_Slot] = 0;
 					npc.frameCounter = 0;
-					npc.ai[3] = (int)States.Fall;
+					npc.ai[AI_State_Slot] = State_Fall;
 				} 
 			}
-			else if (npc.ai[3] == (int)States.Fall)
+			else if (npc.ai[AI_State_Slot] == State_Fall)
 			{
 				npc.frame.Y = 34;
 
 				if(npc.velocity.Y == 0)
 				{
 					npc.velocity.X = 0;
-					npc.ai[3] = (int)States.Asleep;
+					npc.ai[AI_State_Slot] = State_Asleep;
 				}
 			}
 		}
@@ -149,14 +159,6 @@ namespace CaveStory.NPCs
 			npc.spriteDirection = npc.direction;
 		}
 
-		enum States
-		{
-			Asleep,
-			Notice,
-			Jump,
-			Hover,
-			Fall
-		}
 
 		//public override void FindFrame(int frameHeight)
 		//{
