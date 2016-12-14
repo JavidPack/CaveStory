@@ -35,6 +35,9 @@ namespace CaveStory.Tiles
 				case 0:
 					item = "RedBatBanner";
 					break;
+				case 1:
+					item = "GreenCritterBanner";
+					break;
 				default:
 					return;
 			}
@@ -52,6 +55,9 @@ namespace CaveStory.Tiles
 				{
 					case 0:
 						type = "RedBat";
+						break;
+					case 1:
+						type = "GreenCritter";
 						break;
 					default:
 						return;

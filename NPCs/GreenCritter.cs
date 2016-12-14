@@ -31,12 +31,13 @@ namespace CaveStory.NPCs
 			npc.HitSound = mod.GetLegacySoundSlot(SoundType.NPCHit, "Sounds/NPCHit/EnemyHurtSqueak");
 			//npc.soundKilled = mod.GetSoundSlot(SoundType.NPCKilled, "Sounds/NPCKilled/???");
 			bannerItem = mod.ItemType("GreenCritterBanner");
+			bannerItem = mod.ItemType<Items.Banners.GreenCritterBanner>();
 			banner = npc.type;
 		}
 
 		public override float CanSpawn(NPCSpawnInfo spawnInfo)
 		{
-			return spawnInfo.spawnTileY < Main.worldSurface + 100 ? .3f : 0f;
+			return spawnInfo.spawnTileY < Main.worldSurface + 100 ? .1f : 0f;
 			//return 1000f;
 		}
 
