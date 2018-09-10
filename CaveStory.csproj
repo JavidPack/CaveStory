@@ -5,10 +5,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1DF88634-4874-484A-B972-688E618FD245}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Cave Story</RootNamespace>
-    <AssemblyName>Cave Story</AssemblyName>
+    <AssemblyName>CaveStory</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CaveStory.cs" />
@@ -96,9 +99,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\XNA Framework Dlls\Microsoft.Xna.Framework.Xact.dll</HintPath>
     </Reference>
+    <Reference Include="ReLogic">
+      <HintPath>dllReferences\ReLogic.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="tModLoader">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Terraria\tModLoader.exe</HintPath>
+    <Reference Include="Terraria">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Terraria\Terraria.exe</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
