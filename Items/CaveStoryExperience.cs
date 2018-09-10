@@ -8,10 +8,14 @@ using Terraria.ModLoader;
 namespace CaveStory.Items
 {
 	class CaveStoryExperience : ModItem
-	{
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Cave Story Experience");
+        }
+ 
 		public override void SetDefaults()
 		{
-			item.name = "CaveStoryExperience";
 			item.width = 20;
 			item.height = 20;
 			item.value = 100;

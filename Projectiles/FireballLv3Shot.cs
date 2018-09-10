@@ -6,11 +6,14 @@ using Terraria.ModLoader;
 
 namespace CaveStory.Projectiles
 {
-	class FireballLv3Shot : ModProjectile
+    class FireballLv3Shot : ModProjectile
 	{
-		public override void SetDefaults()
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("FireballLv3Shot");
+        }
+        public override void SetDefaults()
 		{
-			projectile.name = "FireballLv3Shot";
 			projectile.width = 16;
 			projectile.height = 16;
 			//  projectile.aiStyle = 8;          

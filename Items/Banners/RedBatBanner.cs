@@ -7,9 +7,12 @@ namespace CaveStory.Items.Banners
 {
 	public class RedBatBanner : ModItem
 	{
-		public override void SetDefaults()
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Red Bat Banner");
+        }
+        public override void SetDefaults()
 		{
-			item.name = "Red Bat Banner";
 			item.width = 10;
 			item.height = 24;
 			item.maxStack = 99;

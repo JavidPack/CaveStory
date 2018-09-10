@@ -5,11 +5,14 @@ using Terraria.ModLoader;
 
 namespace CaveStory.Projectiles
 {
-	class MachineGunLv3Shot : ModProjectile
+    class MachineGunLv3Shot : ModProjectile
 	{
-		public override void SetDefaults()
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("MachineGunLv3Shot");
+        }
+        public override void SetDefaults()
 		{
-			projectile.name = "MachineGunLv3Shot";
 			projectile.width = 44;
 			projectile.height = 8;
 			// projectile.aiStyle = 78;          

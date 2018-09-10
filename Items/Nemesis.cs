@@ -8,11 +8,14 @@ namespace CaveStory.Items
 {
 	class Nemesis : ModItem
 	{
-		public override void SetDefaults()
-		{
-			item.name = "Nemesis";
-			item.toolTip = "Cave Story weapon";
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Nemesis");
+            Tooltip.SetDefault("Cave Story weapon");
+        }
 
+        public override void SetDefaults()
+		{
 			item.useStyle = 6;
 			item.useAnimation = 9;
 			item.useTime = 8;

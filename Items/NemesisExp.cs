@@ -9,11 +9,15 @@ namespace CaveStory.Items
 {
 	class NemesisExp : ModItem
 	{
-		public override void SetDefaults()
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Nemesis Exp");
+            Tooltip.SetDefault("No use yet. Stay tuned.");
+        }
+
+        public override void SetDefaults()
 		{
-			item.name = "Nemesis Exp";
-			item.toolTip = "No use yet. Stay tuned.";
-			item.width = 20;
+            item.width = 20;
 			item.height = 20;
 			item.value = 100;
 			item.rare = 1;

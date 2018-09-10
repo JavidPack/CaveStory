@@ -8,11 +8,13 @@ namespace CaveStory.Items
 {
 	class Fireball : ModItem
 	{
-		public override void SetDefaults()
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Fireball");
+            Tooltip.SetDefault("Cave Story weapon, level up by collecting Fireball Exps");
+        }
+        public override void SetDefaults()
 		{
-			item.name = "Fireball";
-			item.toolTip = "Cave Story weapon, level up by collecting Fireball Exps";
-
 			item.useStyle = 6;
 			item.useAnimation = 9;
 			item.useTime = 8;

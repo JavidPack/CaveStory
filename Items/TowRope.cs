@@ -5,20 +5,25 @@ namespace CaveStory.Items
 {
 	public class TowRope : ModItem
 	{
-		public override void SetDefaults()
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Tow Rope");
+            Tooltip.SetDefault("Use to tow a special robot");
+        }
+
+        public override void SetDefaults()
 		{
 			item.useStyle = 1;
-			item.name = "Tow Rope";
-			item.width = 16;
+            item.width = 16;
 			item.height = 30;
 			item.UseSound = SoundID.Item81;
 			item.useAnimation = 20;
-			item.toolTip = "Use to tow a special robot";
 			item.useTime = 20;
 			item.rare = 8;
 			item.noMelee = true;
 			item.mountType = mod.MountType("CurlyBrace");
 		}
+
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
@@ -49,5 +54,4 @@ namespace CaveStory.Items
 			//recipe.AddRecipe();
 		}
 	}
-
 }

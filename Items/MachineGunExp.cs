@@ -7,12 +7,16 @@ using Terraria.ModLoader;
 
 namespace CaveStory.Items
 {
-	class MachineGunExp : ModItem
-	{
+    public class MachineGunExp : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Machinegun Exp");
+            Tooltip.SetDefault("No use yet. Stay tuned.");
+        }
+
 		public override void SetDefaults()
 		{
-			item.name = "Machinegun Exp";
-			item.toolTip = "No use yet. Stay tuned.";
 			item.width = 20;
 			item.height = 20;
 			item.value = 100;

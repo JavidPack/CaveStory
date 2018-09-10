@@ -8,10 +8,13 @@ namespace CaveStory.NPCs
 {
 	public class RedBat : ModNPC
 	{
-		public override void SetDefaults()
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Red Bat");
+        }
+
+        public override void SetDefaults()
 		{
-			npc.name = "Red Bat";
-			npc.displayName = "Red Bat";
 			npc.aiStyle = 14;//-1;
 			npc.lifeMax = 150;
 			npc.damage = 60;
@@ -37,7 +40,7 @@ namespace CaveStory.NPCs
 			animationType = NPCID.CaveBat;
 		}
 
-		public override float CanSpawn(NPCSpawnInfo spawnInfo)
+		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
 			//Tile tile = Main.tile[spawnInfo.spawnTileX, spawnInfo.spawnTileY];
 			//return 1f;

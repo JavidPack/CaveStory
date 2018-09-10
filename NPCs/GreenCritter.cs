@@ -8,10 +8,13 @@ namespace CaveStory.NPCs
 {
 	public class GreenCritter : ModNPC
 	{
-		public override void SetDefaults()
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Green Critter");
+        }
+
+        public override void SetDefaults()
 		{
-			npc.name = "Green Critter";
-			npc.displayName = "Green Critter";
 			npc.aiStyle = -1;
 			npc.lifeMax = 250;
 			npc.damage = 60;
@@ -35,7 +38,7 @@ namespace CaveStory.NPCs
 			banner = npc.type;
 		}
 
-		public override float CanSpawn(NPCSpawnInfo spawnInfo)
+		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
 			return spawnInfo.spawnTileY < Main.worldSurface + 100 ? .1f : 0f;
 			//return 1000f;

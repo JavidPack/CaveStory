@@ -11,9 +11,12 @@ namespace CaveStory.Projectiles
 {
 	public class BubbleProjectileFlying : ModProjectile
 	{
-		public override void SetDefaults()
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("BubbleProjectileFlying");
+        }
+        public override void SetDefaults()
 		{
-			projectile.name = "BubbleProjectileFlying";
 			projectile.width = 8;
 			projectile.height = 8;
 			// projectile.aiStyle = 0;

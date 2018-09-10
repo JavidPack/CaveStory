@@ -8,11 +8,14 @@ namespace CaveStory.Items
 {
 	class MachineGun : ModItem
 	{
-		public override void SetDefaults()
-		{
-			item.name = "Machine Gun";
-			item.toolTip = "Cave Story weapon";
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Machine Gun");
+            Tooltip.SetDefault("Cave Story weapon");
+        }
 
+        public override void SetDefaults()
+		{
 			item.useStyle = 6;
 			// item.holdStyle
 			//   item.useStyle = 100;

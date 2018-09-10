@@ -9,10 +9,13 @@ namespace CaveStory.Items
 {
 	class FireballExp : ModItem
 	{
-		public override void SetDefaults()
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Fireball Exp");
+            Tooltip.SetDefault("Carry 20+ for Fireball level 2, 40+ for level 3");
+        }
+        public override void SetDefaults()
 		{
-			item.name = "Fireball Exp";
-			item.toolTip = "Carry 20+ for Fireball level 2, 40+ for level 3";
 			item.width = 20;
 			item.height = 20;
 			item.value = 100;

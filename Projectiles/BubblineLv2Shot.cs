@@ -6,9 +6,12 @@ namespace CaveStory.Projectiles
 {
 	public class BubblineLv2Shot : ModProjectile
 	{
-		public override void SetDefaults()
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("BubblineLv2Shot");
+        }
+        public override void SetDefaults()
 		{
-			projectile.name = "BubblineLv2Shot";
 			projectile.width = 8;
 			projectile.height = 8;
 			projectile.friendly = true;

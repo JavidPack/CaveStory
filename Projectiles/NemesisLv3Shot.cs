@@ -5,11 +5,14 @@ using Terraria.ModLoader;
 
 namespace CaveStory.Projectiles
 {
-	class NemesisLv3Shot : ModProjectile
+    class NemesisLv3Shot : ModProjectile
 	{
-		public override void SetDefaults()
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("NemesisLv3Shot");
+        }
+        public override void SetDefaults()
 		{
-			projectile.name = "NemesisLv3Shot";
 			projectile.width = 32;
 			projectile.height = 16;
 			// projectile.aiStyle = 78;          

@@ -8,7 +8,13 @@ namespace CaveStory.Items
 {
 	public class Bubbline : ModItem
 	{
-		static int MaxBubbles = 15;
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Bubbline");
+            Tooltip.SetDefault("Cave Story weapon, level up by collecting Bubbline Exps");
+        }
+
+        static int MaxBubbles = 15;
 		int[] bubbles = new int[MaxBubbles];
 		int bubblesIndex = 0;
 		bool overCap = false;
@@ -16,9 +22,6 @@ namespace CaveStory.Items
 		public override void SetDefaults()
 		{
 			// Bubbline
-			item.name = "Bubbline";
-			item.toolTip = "Cave Story weapon, level up by collecting Bubbline Exps";
-
 			item.channel = true;
 
 			// Xenopoper

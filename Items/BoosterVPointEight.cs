@@ -7,20 +7,19 @@ using Terraria.ModLoader;
 
 namespace CaveStory.Items
 {
-	public class BoosterVPointEight : ModItem
+    [AutoloadEquip(EquipType.Wings)]
+    public class BoosterVPointEight : ModItem
 	{
-		public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
+		public override void SetStaticDefaults()
 		{
-			equips.Add(EquipType.Wings);
-			return true;
-		}
+            DisplayName.SetDefault("Booster v.0.8");
+            Tooltip.SetDefault("Push the jump button again in midair to fly even higher.");
+        }
 
-		public override void SetDefaults()
+        public override void SetDefaults()
 		{
-			item.name = "Booster v.0.8";
 			item.width = 22;
 			item.height = 20;
-			item.toolTip = "Push the jump button again in midair to fly even higher.";
 			item.value = 10000;
 			item.rare = 2;
 			item.accessory = true;
@@ -39,10 +38,10 @@ namespace CaveStory.Items
 			player.wingTimeMax = 180;
 		}
 
-		public override void VerticalWingSpeeds(ref float ascentWhenFalling, ref float ascentWhenRising,
-		   ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
-		{
-			ascentWhenFalling = 0.85f;
+        public override void VerticalWingSpeeds(Player player, ref float ascentWhenFalling, ref float ascentWhenRising,
+            ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
+        {
+            ascentWhenFalling = 0.85f;
 			ascentWhenRising = 0.15f;
 			maxCanAscendMultiplier = 1f;
 			maxAscentMultiplier = 3f;
@@ -55,7 +54,7 @@ namespace CaveStory.Items
 
 		//}
 
-		public override void WingUpdate(Player player, bool inUse)
+		public override bool WingUpdate(Player player, bool inUse)
 		{
 			// ErrorLogger.Log("WingUpdate");
 			if (inUse || player.jump > 0)
@@ -132,10 +131,11 @@ namespace CaveStory.Items
 			{
 				player.wingFrame = 3;
 			}
+            return false;
 		}
 
-		public override void HorizontalWingSpeeds(ref float speed, ref float acceleration)
-		{
+        public override void HorizontalWingSpeeds(Player player, ref float speed, ref float acceleration)
+        {
 			speed = 9f;
 			acceleration *= 2.5f;
 
