@@ -1,5 +1,3 @@
-using System;
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -8,12 +6,12 @@ namespace CaveStory.NPCs
 {
 	public class RedBat : ModNPC
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Red Bat");
-        }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Red Bat");
+		}
 
-        public override void SetDefaults()
+		public override void SetDefaults()
 		{
 			npc.aiStyle = 14;//-1;
 			npc.lifeMax = 150;

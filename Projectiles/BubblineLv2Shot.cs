@@ -6,11 +6,12 @@ namespace CaveStory.Projectiles
 {
 	public class BubblineLv2Shot : ModProjectile
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("BubblineLv2Shot");
-        }
-        public override void SetDefaults()
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("BubblineLv2Shot");
+		}
+
+		public override void SetDefaults()
 		{
 			projectile.width = 8;
 			projectile.height = 8;
@@ -73,10 +74,8 @@ namespace CaveStory.Projectiles
 			projectile.position += projectile.velocity;
 			projectile.velocity = projectile.velocity * .98f;
 
-
 			float light = 0.35f * projectile.scale;
 			Lighting.AddLight(projectile.Center, light, light, light);
-
 		}
 	}
 }

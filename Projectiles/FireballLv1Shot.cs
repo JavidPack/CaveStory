@@ -1,22 +1,21 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CaveStory.Projectiles
 {
-    class FireballLv1Shot : ModProjectile
+	internal class FireballLv1Shot : ModProjectile
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("FireballLv1Shot");
-        }
-        public override void SetDefaults()
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("FireballLv1Shot");
+		}
+
+		public override void SetDefaults()
 		{
 			projectile.width = 16;
 			projectile.height = 16;
-			//  projectile.aiStyle = 8;          
+			//  projectile.aiStyle = 8;
 			projectile.friendly = true;
 			//    projectile.alpha = (int)byte.MaxValue;
 			projectile.ranged = true;

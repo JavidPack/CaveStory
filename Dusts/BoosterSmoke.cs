@@ -1,11 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 
 namespace CaveStory.Dusts
 {
-	class BoosterSmoke : ModDust
+	internal class BoosterSmoke : ModDust
 	{
 		public override void OnSpawn(Dust dust)
 		{
@@ -15,7 +14,7 @@ namespace CaveStory.Dusts
 			dust.alpha = 0;
 		}
 
-		const int frametime = 5;
+		private const int frametime = 5;
 
 		public override bool Update(Dust dust)
 		{

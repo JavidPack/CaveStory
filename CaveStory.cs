@@ -2,16 +2,10 @@
 
 namespace CaveStory
 {
-	class CaveStory : Mod
+	internal class CaveStory : Mod
 	{
 		public CaveStory()
 		{
-			Properties = new ModProperties()
-			{
-				Autoload = true,
-				AutoloadGores = true,
-				AutoloadSounds = true
-			};
 		}
 	}
 }

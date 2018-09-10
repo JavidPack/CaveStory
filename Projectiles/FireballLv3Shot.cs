@@ -6,17 +6,18 @@ using Terraria.ModLoader;
 
 namespace CaveStory.Projectiles
 {
-    class FireballLv3Shot : ModProjectile
+	internal class FireballLv3Shot : ModProjectile
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("FireballLv3Shot");
-        }
-        public override void SetDefaults()
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("FireballLv3Shot");
+		}
+
+		public override void SetDefaults()
 		{
 			projectile.width = 16;
 			projectile.height = 16;
-			//  projectile.aiStyle = 8;          
+			//  projectile.aiStyle = 8;
 			projectile.friendly = true;
 			//    projectile.alpha = (int)byte.MaxValue;
 			projectile.ranged = true;
@@ -97,7 +98,7 @@ namespace CaveStory.Projectiles
 		//  2 light blue
 		// 2  blue
 		//
-		const int a = 2;
+		private const int a = 2;
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
@@ -116,21 +117,27 @@ namespace CaveStory.Projectiles
 					case 0:
 						r = new Rectangle?(new Rectangle(0, projectile.frame * (projectile.height + 2), projectile.width, projectile.height));
 						break;
+
 					case a:
 						r = new Rectangle?(new Rectangle(0, ((projectile.frame + 1) % 3 + 12) * (projectile.height + 2), projectile.width, projectile.height));
 						break;
+
 					case 2 * a:
 						r = new Rectangle?(new Rectangle(0, ((projectile.frame + 2) % 3 + 15) * (projectile.height + 2), projectile.width, projectile.height));
 						break;
+
 					case 3 * a:
 						r = new Rectangle?(new Rectangle(0, ((projectile.frame + 3) % 3 + 15) * (projectile.height + 2), projectile.width, projectile.height));
 						break;
+
 					case 4 * a:
 						r = new Rectangle?(new Rectangle(0, ((projectile.frame + 1) % 3 + 18) * (projectile.height + 2), projectile.width, projectile.height));
 						break;
+
 					case 5 * a:
 						r = new Rectangle?(new Rectangle(0, ((projectile.frame + 2) % 3 + 18) * (projectile.height + 2), projectile.width, projectile.height));
 						break;
+
 					default:
 						//   ErrorLogger.Log("Problem");
 						r = new Rectangle?(new Rectangle(0, projectile.frame * (projectile.height + 2), projectile.width, projectile.height));

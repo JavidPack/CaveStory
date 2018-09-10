@@ -1,17 +1,16 @@
-﻿using System;
-using Terraria;
-using Terraria.ID;
+﻿using Terraria;
 using Terraria.ModLoader;
 
 namespace CaveStory.Items.Banners
 {
 	public class GreenCritterBanner : ModItem
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Green Critter Banner");
-        }
-        public override void SetDefaults()
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Green Critter Banner");
+		}
+
+		public override void SetDefaults()
 		{
 			item.width = 10;
 			item.height = 24;

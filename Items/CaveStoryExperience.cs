@@ -1,19 +1,15 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
+﻿using Terraria;
 using Terraria.ModLoader;
 
 namespace CaveStory.Items
 {
-	class CaveStoryExperience : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Cave Story Experience");
-        }
- 
+	internal class CaveStoryExperience : ModItem
+	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Cave Story Experience");
+		}
+
 		public override void SetDefaults()
 		{
 			item.width = 20;

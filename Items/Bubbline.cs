@@ -8,17 +8,18 @@ namespace CaveStory.Items
 {
 	public class Bubbline : ModItem
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Bubbline");
-            Tooltip.SetDefault("Cave Story weapon, level up by collecting Bubbline Exps");
-        }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Bubbline");
+			Tooltip.SetDefault("Cave Story weapon, level up by collecting Bubbline Exps");
+		}
 
-        static int MaxBubbles = 15;
-		int[] bubbles = new int[MaxBubbles];
-		int bubblesIndex = 0;
-		bool overCap = false;
-		int proj = 1;
+		private static int MaxBubbles = 15;
+		private int[] bubbles = new int[MaxBubbles];
+		private int bubblesIndex = 0;
+		private bool overCap = false;
+		private int proj = 1;
+
 		public override void SetDefaults()
 		{
 			// Bubbline
@@ -55,7 +56,6 @@ namespace CaveStory.Items
 			item.knockBack = 3f;
 
 			//   ErrorLogger.Log("use" + item.useStyle);
-
 		}
 
 		private int CurrentLevel(Player player)
@@ -71,7 +71,6 @@ namespace CaveStory.Items
 			if (level == 1)
 			{
 				ShootLv1(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
-
 			}
 			else if (level == 2)
 			{
@@ -83,7 +82,7 @@ namespace CaveStory.Items
 			}
 
 			//Vector2 dustposition = position;
-			//// Adapted from Player.cs(23066):   
+			//// Adapted from Player.cs(23066):
 			//Vector2 vector2_4 = Vector2.Normalize(new Vector2(speedX, speedY)) * 40f * item.scale;
 			//if (Collision.CanHit(position, 0, 0, position + vector2_4, 0, 0))
 			//    position += vector2_4;
@@ -231,8 +230,6 @@ namespace CaveStory.Items
 			Main.projectile[a].scale = 2;
 			Main.projectile[a].rotation = Main.projectile[a].velocity.ToRotation();
 
-
-
 			int dust = Dust.NewDust(position, 0, 0, mod.DustType("StarMuzzleFlash"));
 			Main.dust[dust].scale = 2;// (Main.rand.Next() * 12f);//  2;
 			Main.dust[dust].position = position - Main.dust[dust].scale * new Vector2(4, 4);
@@ -271,8 +268,6 @@ namespace CaveStory.Items
 			Main.projectile[a].scale = 2;
 			Main.projectile[a].rotation = Main.projectile[a].velocity.ToRotation();
 
-
-
 			int dust = Dust.NewDust(position, 0, 0, mod.DustType("StarMuzzleFlash"));
 			Main.dust[dust].scale = 2;// (Main.rand.Next() * 12f);//  2;
 			Main.dust[dust].position = position - Main.dust[dust].scale * new Vector2(4, 4);
@@ -282,7 +277,7 @@ namespace CaveStory.Items
 		public void ShootLv3(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			Vector2 dustposition = position;
-			// Adapted from Player.cs(23066):   
+			// Adapted from Player.cs(23066):
 			Vector2 vector2_4 = Vector2.Normalize(new Vector2(speedX, speedY)) * 40f * item.scale;
 			if (Collision.CanHit(position, 0, 0, position + vector2_4, 0, 0))
 				position += vector2_4;
@@ -398,7 +393,6 @@ namespace CaveStory.Items
 				}
 				else
 				{
-
 					player.itemRotation = player.direction * -MathHelper.Pi / 2;
 					player.itemLocation.X += player.direction * 8;
 					player.itemLocation.Y -= 10;
@@ -440,7 +434,6 @@ namespace CaveStory.Items
 			}
 			return true;
 		}
-		
 
 		public override void PostDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
 		{
@@ -490,7 +483,6 @@ namespace CaveStory.Items
 			//recipe.AddIngredient(Terraria.ID.ItemID.DirtBlock);
 			//recipe.SetResult(mod, "BubblineExp",10);
 			//recipe.AddRecipe();
-
 		}
 	}
 }

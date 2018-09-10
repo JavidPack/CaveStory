@@ -1,21 +1,16 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
 
 namespace CaveStory.Projectiles
 {
 	public class BubbleProjectileFlying : ModProjectile
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("BubbleProjectileFlying");
-        }
-        public override void SetDefaults()
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("BubbleProjectileFlying");
+		}
+
+		public override void SetDefaults()
 		{
 			projectile.width = 8;
 			projectile.height = 8;
@@ -51,8 +46,6 @@ namespace CaveStory.Projectiles
 
 			float light = 0.35f * projectile.scale;
 			Lighting.AddLight(projectile.Center, light, light, light);
-
 		}
-
 	}
 }

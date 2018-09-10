@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -7,16 +6,17 @@ namespace CaveStory.Projectiles
 {
 	public class BubbleProjectile : ModProjectile
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("BubbleProjectile");
-        }
-        public override void SetDefaults()
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("BubbleProjectile");
+		}
+
+		public override void SetDefaults()
 		{
 			//projectile.name = "Xenopopper";
 			projectile.width = 8;
 			projectile.height = 8;
-			// projectile.aiStyle = 78;          
+			// projectile.aiStyle = 78;
 			projectile.friendly = true;
 			projectile.alpha = (int)byte.MaxValue;
 			//     projectile.scale = 6f;
@@ -28,7 +28,6 @@ namespace CaveStory.Projectiles
 
 			//  projectile.position -= projectile.scale * new Vector2(4, 4);
 
-
 			// 1. set default
 			// 2. this.width = (int)((float)this.width * this.scale);  this.height = (int)((float)this.height * this.scale);
 			// 3. projectile.position.X = X - (float)projectile.width * 0.5f;  projectile.position.Y = Y - (float)projectile.height * 0.5f;
@@ -36,9 +35,7 @@ namespace CaveStory.Projectiles
 			// scale = 10, position = 0,0? width 10,10
 			//  width = 100, height = 100
 			// position = -50, -50
-
 		}
-
 
 		public override void Kill(int timeLeft)
 		{
@@ -132,11 +129,11 @@ namespace CaveStory.Projectiles
 			return false;
 		}
 
-		float m = 1f; // Mass 
-		float R = 100f; // Rest length of spring
-		float k = .0005f; // spring constant
-		float b = .0f; // damping constant
-		float g = .00f; // gravitational constant
+		private float m = 1f; // Mass
+		private float R = 100f; // Rest length of spring
+		private float k = .0005f; // spring constant
+		private float b = .0f; // damping constant
+		private float g = .00f; // gravitational constant
 
 		public override void AI()
 		{
@@ -206,9 +203,6 @@ namespace CaveStory.Projectiles
 		}
 	}
 }
-
-
-
 
 //public override void AI()
 //{

@@ -1,15 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 
 namespace CaveStory.Dusts
 {
-	class BubblineLv12Pop : ModDust
+	internal class BubblineLv12Pop : ModDust
 	{
 		public override void OnSpawn(Dust dust)
 		{
-			// Projectiles: 
+			// Projectiles:
 			// 1. set default
 			// 2. this.width = (int)((float)this.width * this.scale);  this.height = (int)((float)this.height * this.scale);
 			// 3. projectile.position.X = X - (float)projectile.width * 0.5f;  projectile.position.Y = Y - (float)projectile.height * 0.5f;
@@ -30,7 +29,6 @@ namespace CaveStory.Dusts
 		{
 			//    dust.position += dust.velocity;
 
-
 			dust.alpha += 1;
 			if (dust.alpha == 10)
 			{
@@ -46,7 +44,6 @@ namespace CaveStory.Dusts
 			}
 			if (dust.alpha > 40)
 			{
-
 				dust.active = false;
 			}
 

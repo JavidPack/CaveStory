@@ -6,15 +6,15 @@ using Terraria.ModLoader;
 
 namespace CaveStory.Items
 {
-	class Nemesis : ModItem
+	internal class Nemesis : ModItem
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Nemesis");
-            Tooltip.SetDefault("Cave Story weapon");
-        }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Nemesis");
+			Tooltip.SetDefault("Cave Story weapon");
+		}
 
-        public override void SetDefaults()
+		public override void SetDefaults()
 		{
 			item.useStyle = 6;
 			item.useAnimation = 9;
@@ -109,7 +109,6 @@ namespace CaveStory.Items
 				}
 				else
 				{
-
 					player.itemRotation = player.direction * -MathHelper.Pi / 2;
 					player.itemLocation.X += player.direction * 6;
 					player.itemLocation.Y -= 10;

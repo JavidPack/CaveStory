@@ -1,19 +1,17 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CaveStory.NPCs
 {
 	public class GreenCritter : ModNPC
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Green Critter");
-        }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Green Critter");
+		}
 
-        public override void SetDefaults()
+		public override void SetDefaults()
 		{
 			npc.aiStyle = -1;
 			npc.lifeMax = 250;
@@ -44,16 +42,16 @@ namespace CaveStory.NPCs
 			//return 1000f;
 		}
 
-		const int AI_Unused1_Slot = 0;
-		const int AI_Unused2_Slot = 1;
-		const int AI_HoverTimer_Slot = 2;
-		const int AI_State_Slot = 3;
+		private const int AI_Unused1_Slot = 0;
+		private const int AI_Unused2_Slot = 1;
+		private const int AI_HoverTimer_Slot = 2;
+		private const int AI_State_Slot = 3;
 
-		const int State_Asleep = 0;
-		const int State_Notice = 1;
-		const int State_Jump = 2;
-		const int State_Hover = 3;
-		const int State_Fall = 4;
+		private const int State_Asleep = 0;
+		private const int State_Notice = 1;
+		private const int State_Jump = 2;
+		private const int State_Hover = 3;
+		private const int State_Fall = 4;
 
 		public override void AI()
 		{
@@ -92,7 +90,7 @@ namespace CaveStory.NPCs
 					npc.frame.Y = 18;
 					npc.frameCounter = 0;
 					npc.TargetClosest(true);
-					if (!npc.HasValidTarget ||  Main.player[npc.target].Distance(npc.Center) > 500f)
+					if (!npc.HasValidTarget || Main.player[npc.target].Distance(npc.Center) > 500f)
 					{
 						npc.ai[AI_State_Slot] = State_Asleep;
 					}
@@ -119,7 +117,7 @@ namespace CaveStory.NPCs
 			{
 				npc.ai[AI_HoverTimer_Slot] += 1;
 				npc.velocity += new Vector2(0, -.35f);
-				 // 54, 72, 90
+				// 54, 72, 90
 				npc.frameCounter++;
 				if (npc.frameCounter < 10)
 				{
@@ -137,18 +135,18 @@ namespace CaveStory.NPCs
 				{
 					npc.frameCounter = 0;
 				}
-				if(npc.ai[AI_HoverTimer_Slot] > 100)
+				if (npc.ai[AI_HoverTimer_Slot] > 100)
 				{
 					npc.ai[AI_HoverTimer_Slot] = 0;
 					npc.frameCounter = 0;
 					npc.ai[AI_State_Slot] = State_Fall;
-				} 
+				}
 			}
 			else if (npc.ai[AI_State_Slot] == State_Fall)
 			{
 				npc.frame.Y = 34;
 
-				if(npc.velocity.Y == 0)
+				if (npc.velocity.Y == 0)
 				{
 					npc.velocity.X = 0;
 					npc.ai[AI_State_Slot] = State_Asleep;
@@ -156,13 +154,10 @@ namespace CaveStory.NPCs
 			}
 		}
 
-		
-
 		public override void FindFrame(int frameHeight)
 		{
 			npc.spriteDirection = npc.direction;
 		}
-
 
 		//public override void FindFrame(int frameHeight)
 		//{

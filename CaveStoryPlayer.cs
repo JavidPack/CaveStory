@@ -11,6 +11,7 @@ namespace CaveStory
 		private const int saveVersion = 0;
 
 		private int _BubblineExp;
+
 		internal int BubblineExp
 		{
 			get { return _BubblineExp; }
@@ -18,6 +19,7 @@ namespace CaveStory
 		}
 
 		private int _NemesisExp;
+
 		internal int NemesisExp
 		{
 			get { return _NemesisExp; }
@@ -25,6 +27,7 @@ namespace CaveStory
 		}
 
 		private int _FireballExp;
+
 		internal int FireballExp
 		{
 			get { return _FireballExp; }
@@ -32,27 +35,28 @@ namespace CaveStory
 		}
 
 		private int _MachineGunExp;
+
 		internal int MachineGunExp
 		{
 			get { return _MachineGunExp; }
 			set { _MachineGunExp = Math.Max(Math.Min(value, MachineGunLevelMax), 0); }
 		}
 
-		const int MachineGunLevel2 = 20;
-		const int MachineGunLevel3 = 40;
-		const int MachineGunLevelMax = 80;
+		private const int MachineGunLevel2 = 20;
+		private const int MachineGunLevel3 = 40;
+		private const int MachineGunLevelMax = 80;
 
-		const int NemesisLevel2 = 20;
-		const int NemesisLevel3 = 40;
-		const int NemesisLevelMax = 80;
+		private const int NemesisLevel2 = 20;
+		private const int NemesisLevel3 = 40;
+		private const int NemesisLevelMax = 80;
 
-		const int FireballLevel2 = 20;
-		const int FireballLevel3 = 40;
-		const int FireballLevelMax = 80;
+		private const int FireballLevel2 = 20;
+		private const int FireballLevel3 = 40;
+		private const int FireballLevelMax = 80;
 
-		const int BubblineLevel2 = 20;
-		const int BubblineLevel3 = 40;
-		const int BubblineLevelMax = 80;
+		private const int BubblineLevel2 = 20;
+		private const int BubblineLevel3 = 40;
+		private const int BubblineLevelMax = 80;
 
 		public int MachineGunLevel
 		{
@@ -70,6 +74,7 @@ namespace CaveStory
 					return 1;
 			}
 		}
+
 		public int FireballLevel
 		{
 			get
@@ -86,6 +91,7 @@ namespace CaveStory
 					return 1;
 			}
 		}
+
 		public int BubblineLevel
 		{
 			get
@@ -102,6 +108,7 @@ namespace CaveStory
 					return 1;
 			}
 		}
+
 		public int NemesisLevel
 		{
 			get
@@ -123,7 +130,7 @@ namespace CaveStory
 		{
 			get
 			{
-				if(BubblineLevel == 1)
+				if (BubblineLevel == 1)
 					return (float)BubblineExp / BubblineLevel2;
 				if (BubblineLevel == 2)
 					return (float)BubblineExp / BubblineLevel3;
@@ -132,6 +139,7 @@ namespace CaveStory
 				return .5f;
 			}
 		}
+
 		public float NemesisLvUpPercent
 		{
 			get
@@ -145,6 +153,7 @@ namespace CaveStory
 				return .5f;
 			}
 		}
+
 		public float FireballLvUpPercent
 		{
 			get
@@ -158,6 +167,7 @@ namespace CaveStory
 				return .5f;
 			}
 		}
+
 		public float MachineGunLvUpPercent
 		{
 			get

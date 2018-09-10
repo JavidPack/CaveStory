@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -7,16 +6,17 @@ namespace CaveStory.Projectiles
 {
 	public class BubblineLv1Shot : ModProjectile
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("BubblineLv1Shot");
-        }
-        public override void SetDefaults()
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("BubblineLv1Shot");
+		}
+
+		public override void SetDefaults()
 		{
 			//projectile.name = "Xenopopper";
 			projectile.width = 8;
 			projectile.height = 8;
-			// projectile.aiStyle = 78;          
+			// projectile.aiStyle = 78;
 			projectile.friendly = true;
 			//   projectile.alpha = (int)byte.MaxValue;
 			//     projectile.scale = 6f;
@@ -28,7 +28,6 @@ namespace CaveStory.Projectiles
 
 			//  projectile.position -= projectile.scale * new Vector2(4, 4);
 
-
 			// 1. set default
 			// 2. this.width = (int)((float)this.width * this.scale);  this.height = (int)((float)this.height * this.scale);
 			// 3. projectile.position.X = X - (float)projectile.width * 0.5f;  projectile.position.Y = Y - (float)projectile.height * 0.5f;
@@ -36,7 +35,6 @@ namespace CaveStory.Projectiles
 			// scale = 10, position = 0,0? width 10,10
 			//  width = 100, height = 100
 			// position = -50, -50
-
 		}
 
 		public override void Kill(int timeLeft)
@@ -71,7 +69,6 @@ namespace CaveStory.Projectiles
 		//    return false;
 		//}
 
-
 		public override void AI()
 		{
 			projectile.frameCounter++;
@@ -91,16 +88,11 @@ namespace CaveStory.Projectiles
 			projectile.position += projectile.velocity;
 			projectile.velocity = projectile.velocity * .93f;
 
-
 			float light = 0.35f * projectile.scale;
 			Lighting.AddLight(projectile.Center, light, light, light);
-
 		}
 	}
 }
-
-
-
 
 //public override void AI()
 //{

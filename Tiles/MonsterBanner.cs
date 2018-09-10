@@ -1,8 +1,6 @@
-using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
@@ -35,9 +33,11 @@ namespace CaveStory.Tiles
 				case 0:
 					item = "RedBatBanner";
 					break;
+
 				case 1:
 					item = "GreenCritterBanner";
 					break;
+
 				default:
 					return;
 			}
@@ -56,9 +56,11 @@ namespace CaveStory.Tiles
 					case 0:
 						type = "RedBat";
 						break;
+
 					case 1:
 						type = "GreenCritter";
 						break;
+
 					default:
 						return;
 				}

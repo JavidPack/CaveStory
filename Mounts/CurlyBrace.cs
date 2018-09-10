@@ -1,8 +1,5 @@
-using System;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CaveStory.Mounts
@@ -78,6 +75,7 @@ namespace CaveStory.Mounts
 				mountData.textureHeight = mountData.backTexture.Height;
 			}
 		}
+
 		//public override bool CustomBodyFrame()
 		//{
 		//    ErrorLogger.Log("CustomBodyFrame");
@@ -92,7 +90,6 @@ namespace CaveStory.Mounts
 			{
 				relativeY = Main.screenPosition.Y + (float)Main.screenHeight - (float)Main.mouseY - mountedPlayer.Center.Y;
 			}
-
 
 			if (relativeX - relativeY > 0)
 			{
@@ -115,7 +112,6 @@ namespace CaveStory.Mounts
 						mountedPlayer.mount._frame = 2;
 						mountData.xOffset = 0;
 						mountData.yOffset = 20;
-
 					}
 				}
 			}
@@ -137,9 +133,8 @@ namespace CaveStory.Mounts
 			return false;
 		}
 
+		private bool used = false;
 
-
-		bool used = false;
 		public override void UpdateEffects(Player mountedPlayer)
 		{
 			//        ErrorLogger.Log("UpdateEffects");
@@ -174,7 +169,6 @@ namespace CaveStory.Mounts
 					{
 						relativeY = Main.screenPosition.Y + (float)Main.screenHeight - (float)Main.mouseY - mountedPlayer.Center.Y;
 					}
-
 
 					int dir = 0;
 					if (relativeX - relativeY > 0)
@@ -227,13 +221,9 @@ namespace CaveStory.Mounts
 					Main.projectile[a].frame = dir * 2;
 				}
 			}
-
-
-
 		}
 	}
 }
-
 
 //     Vector2 vector = center;
 //     bool flag = false;

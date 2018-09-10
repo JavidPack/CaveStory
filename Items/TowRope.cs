@@ -5,16 +5,16 @@ namespace CaveStory.Items
 {
 	public class TowRope : ModItem
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Tow Rope");
-            Tooltip.SetDefault("Use to tow a special robot");
-        }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Tow Rope");
+			Tooltip.SetDefault("Use to tow a special robot");
+		}
 
-        public override void SetDefaults()
+		public override void SetDefaults()
 		{
 			item.useStyle = 1;
-            item.width = 16;
+			item.width = 16;
 			item.height = 30;
 			item.UseSound = SoundID.Item81;
 			item.useAnimation = 20;

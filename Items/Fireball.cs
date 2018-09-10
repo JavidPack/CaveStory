@@ -6,14 +6,15 @@ using Terraria.ModLoader;
 
 namespace CaveStory.Items
 {
-	class Fireball : ModItem
+	internal class Fireball : ModItem
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Fireball");
-            Tooltip.SetDefault("Cave Story weapon, level up by collecting Fireball Exps");
-        }
-        public override void SetDefaults()
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Fireball");
+			Tooltip.SetDefault("Cave Story weapon, level up by collecting Fireball Exps");
+		}
+
+		public override void SetDefaults()
 		{
 			item.useStyle = 6;
 			item.useAnimation = 9;
@@ -44,7 +45,6 @@ namespace CaveStory.Items
 			if (level == 3 && player.ownedProjectileCounts[mod.ProjectileType("FireballLv3Shot")] < 4)
 				return true;
 
-
 			return false;
 		}
 
@@ -61,7 +61,6 @@ namespace CaveStory.Items
 			//ErrorLogger.Log("levels ");
 			int level = CurrentLevel(player);
 			//ErrorLogger.Log("level " + level);
-
 
 			if (level == 1)
 			{
@@ -112,8 +111,6 @@ namespace CaveStory.Items
 					int a = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("FireballLv1Shot"), item.damage, item.knockBack, item.owner, 0f, 0f);
 					Main.projectile[a].scale = 2;
 					Main.projectile[a].rotation = Main.projectile[a].velocity.ToRotation();
-
-
 
 					int dust = Dust.NewDust(position, 0, 0, mod.DustType("StarMuzzleFlash"));
 					Main.dust[dust].scale = 2;
@@ -169,8 +166,6 @@ namespace CaveStory.Items
 					int a = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("FireballLv2Shot"), item.damage, item.knockBack, item.owner, 0f, 0f);
 					Main.projectile[a].scale = 2;
 					Main.projectile[a].rotation = Main.projectile[a].velocity.ToRotation();
-
-
 
 					int dust = Dust.NewDust(position, 0, 0, mod.DustType("StarMuzzleFlash"));
 					Main.dust[dust].scale = 2;
@@ -233,8 +228,6 @@ namespace CaveStory.Items
 					Main.projectile[a].scale = 2;
 					Main.projectile[a].rotation = Main.projectile[a].velocity.ToRotation();
 
-
-
 					int dust = Dust.NewDust(position, 0, 0, mod.DustType("StarMuzzleFlash"));
 					Main.dust[dust].scale = 2;
 					Main.dust[dust].position = position - Main.dust[dust].scale * new Vector2(4, 4);
@@ -266,6 +259,7 @@ namespace CaveStory.Items
 			}
 			return true;
 		}
+
 		public override void UseStyle(Player player)
 		{
 			player.itemLocation.X = player.position.X + (float)player.width * 0.5f;// - (float)Main.itemTexture[item.type].Width * 0.5f;// - (float)(player.direction * 2);
@@ -286,7 +280,6 @@ namespace CaveStory.Items
 				}
 				else
 				{
-
 					player.itemRotation = player.direction * -MathHelper.Pi / 2;
 					player.itemLocation.X += player.direction * 6;
 					player.itemLocation.Y -= 10;
@@ -317,7 +310,6 @@ namespace CaveStory.Items
 		//        }
 		//        else
 		//        {
-
 		//            player.itemRotation = player.direction * -MathHelper.Pi / 2;
 		//            player.itemLocation.X += player.direction * 8;
 		//        }

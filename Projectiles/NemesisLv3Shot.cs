@@ -5,17 +5,18 @@ using Terraria.ModLoader;
 
 namespace CaveStory.Projectiles
 {
-    class NemesisLv3Shot : ModProjectile
+	internal class NemesisLv3Shot : ModProjectile
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("NemesisLv3Shot");
-        }
-        public override void SetDefaults()
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("NemesisLv3Shot");
+		}
+
+		public override void SetDefaults()
 		{
 			projectile.width = 32;
 			projectile.height = 16;
-			// projectile.aiStyle = 78;          
+			// projectile.aiStyle = 78;
 			projectile.friendly = true;
 			//    projectile.alpha = (int)byte.MaxValue;
 			//     projectile.scale = 6f;
@@ -40,7 +41,6 @@ namespace CaveStory.Projectiles
 		{
 			if (projectile.frameCounter % 10 == 0)
 			{
-
 				int dust = Dust.NewDust(projectile.Center, 0, 0, mod.DustType("NemesisSmoke"));
 				Main.dust[dust].scale = 2;
 				Main.dust[dust].position = projectile.Center - Main.dust[dust].scale * new Vector2(4, 4);
@@ -69,7 +69,6 @@ namespace CaveStory.Projectiles
 				// projectile.frameCounter = 0;
 			}
 
-
 			float light = 0.35f * projectile.scale;// * (projectile.frame + 1 / 4f);
 			Lighting.AddLight(projectile.Center, light, light, light);
 		}
@@ -97,37 +96,45 @@ namespace CaveStory.Projectiles
 					r = new Rectangle?(new Rectangle(0, 0, 32, 16));
 					drawOrigin = new Vector2(0, 8);
 					break;
+
 				case 1:
 					r = new Rectangle?(new Rectangle(0, 16, 32, 16));
 					drawOrigin = new Vector2(0, 8);
 
 					break;
+
 				case 2:
 					r = new Rectangle?(new Rectangle(34, 0, 16, 32));
 					//   drawOrigin = new Vector2(8, 0);
 					break;
+
 				case 3:
 					r = new Rectangle?(new Rectangle(50, 0, 16, 32));
 					//    drawOrigin = new Vector2(8, 0);
 					break;
+
 				case 4:
 					r = new Rectangle?(new Rectangle(68, 0, 32, 16));
 					drawOrigin = new Vector2(32, 8);
 
 					break;
+
 				case 5:
 					r = new Rectangle?(new Rectangle(68, 16, 32, 16));
 					drawOrigin = new Vector2(32, 8);
 
 					break;
+
 				case 6:
 					r = new Rectangle?(new Rectangle(102, 0, 16, 32));
 					drawOrigin = new Vector2(0, 32);
 					break;
+
 				case 7:
 					r = new Rectangle?(new Rectangle(118, 0, 16, 32));
 					drawOrigin = new Vector2(0, 32);
 					break;
+
 				default:
 					//ErrorLogger.Log("Problem");
 					r = new Rectangle?(new Rectangle(0, projectile.frame * (projectile.height + 2), projectile.width, projectile.height));

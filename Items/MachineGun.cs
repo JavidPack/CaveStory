@@ -6,15 +6,15 @@ using Terraria.ModLoader;
 
 namespace CaveStory.Items
 {
-	class MachineGun : ModItem
+	internal class MachineGun : ModItem
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Machine Gun");
-            Tooltip.SetDefault("Cave Story weapon");
-        }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Machine Gun");
+			Tooltip.SetDefault("Cave Story weapon");
+		}
 
-        public override void SetDefaults()
+		public override void SetDefaults()
 		{
 			item.useStyle = 6;
 			// item.holdStyle
@@ -88,14 +88,13 @@ namespace CaveStory.Items
 			Main.projectile[a].scale = 2;
 			Main.projectile[a].rotation = Main.projectile[a].velocity.ToRotation();
 
-
-
 			int dust = Dust.NewDust(position, 0, 0, mod.DustType("StarMuzzleFlash"));
 			Main.dust[dust].scale = 2;
 			Main.dust[dust].position = position - Main.dust[dust].scale * new Vector2(4, 4);
 
 			return false;
 		}
+
 		public override void UseStyle(Player player)
 		{
 			player.itemLocation.X = player.position.X + (float)player.width * 0.5f;// - (float)Main.itemTexture[item.type].Width * 0.5f;// - (float)(player.direction * 2);
@@ -116,7 +115,6 @@ namespace CaveStory.Items
 				}
 				else
 				{
-
 					player.itemRotation = player.direction * -MathHelper.Pi / 2;
 					player.itemLocation.X += player.direction * 2;
 					player.itemLocation.Y -= 10;
@@ -184,7 +182,6 @@ namespace CaveStory.Items
 		//        }
 		//        else
 		//        {
-
 		//            player.itemRotation = player.direction * -MathHelper.Pi / 2;
 		//                   player.itemLocation.X += player.direction * 8;
 		//        }
@@ -226,7 +223,6 @@ namespace CaveStory.Items
 		//        }
 		//        else
 		//        {
-
 		//            player.itemRotation = player.direction * -MathHelper.Pi / 2;
 		//        }
 		//    }
@@ -242,7 +238,6 @@ namespace CaveStory.Items
 		//        }
 		//    }
 		//}
-
 
 		//public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale)
 		//{

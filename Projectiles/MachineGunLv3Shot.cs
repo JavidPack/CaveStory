@@ -1,21 +1,21 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 
 namespace CaveStory.Projectiles
 {
-    class MachineGunLv3Shot : ModProjectile
+	internal class MachineGunLv3Shot : ModProjectile
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("MachineGunLv3Shot");
-        }
-        public override void SetDefaults()
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("MachineGunLv3Shot");
+		}
+
+		public override void SetDefaults()
 		{
 			projectile.width = 44;
 			projectile.height = 8;
-			// projectile.aiStyle = 78;          
+			// projectile.aiStyle = 78;
 			projectile.friendly = true;
 			//    projectile.alpha = (int)byte.MaxValue;
 			//     projectile.scale = 6f;
