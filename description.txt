@@ -1,6 +1,6 @@
-﻿This mod includes 2 NPC, 4 upgradable weapons, 1 mount, and 1 wing brought over from Cave Story, a popular indie game.
+﻿This mod includes 2 NPCs, 5 weapons (4 of which are upgradable at the moment), 1 mount, and 1 wing brought over from Cave Story, a popular indie game.
 
-Weapons: Bubbline, Fireball, Machine Gune, Nemesis
+Weapons: Polar Star, Bubbline, Fireball, Machine Gun, Nemesis
 Mount: Curly Brace
 Wings: Booster v0.8
-NPC: Green Critter, Red Bat
+NPCs: Green Critter, Red Bat
