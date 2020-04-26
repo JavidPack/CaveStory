@@ -1,4 +1,4 @@
-author = jopojelly; Vetpetmon
+author = jopojelly; Vetpetmon; ethovoid
 version = 0.3
 displayName = Cave Story
 homepage = http://forums.terraria.org/index.php?threads/cave-story.32682/
