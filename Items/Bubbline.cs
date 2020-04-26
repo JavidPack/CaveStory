@@ -11,7 +11,7 @@ namespace CaveStory.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Bubbline");
-			Tooltip.SetDefault("Cave Story weapon, level up by collecting Bubbline Exps");
+			Tooltip.SetDefault("Creates a stream of bubbles, use it as you'd like");
 		}
 
 		private static int MaxBubbles = 15;
@@ -444,8 +444,8 @@ namespace CaveStory.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			//recipe.AddCraftGroup(CraftGroup.IronBar, 10);
-			recipe.AddIngredient(ItemID.DirtBlock, 1);
-			recipe.AddTile(TileID.WorkBenches);
+			recipe.AddIngredient(ItemID.IronBar, 10);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 

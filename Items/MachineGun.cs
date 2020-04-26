@@ -11,7 +11,7 @@ namespace CaveStory.Items
 	public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Machine Gun");
-			Tooltip.SetDefault("A very high-speed firearm. Its ammo recharges gradually");
+			Tooltip.SetDefault("A very high-speed firearm. Try angling it downwards in mid-air sometime!");
 		}
 
 		public override void SetDefaults()
@@ -272,8 +272,8 @@ namespace CaveStory.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			//recipe.AddCraftGroup(CraftGroup.IronBar, 10);
-			recipe.AddIngredient(ItemID.DirtBlock, 1);
-			recipe.AddTile(TileID.WorkBenches);
+			recipe.AddIngredient(ItemID.IronBar, 10);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 

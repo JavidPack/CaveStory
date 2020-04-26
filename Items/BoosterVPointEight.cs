@@ -11,7 +11,7 @@ namespace CaveStory.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Booster v.0.8");
-			Tooltip.SetDefault("Push the jump button again in midair to fly even higher.");
+			Tooltip.SetDefault("Push the jump button again in midair to fly even higher");
 		}
 
 		public override void SetDefaults()
@@ -144,8 +144,8 @@ namespace CaveStory.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			//recipe.AddCraftGroup(CraftGroup.IronBar, 10);
-			recipe.AddIngredient(ItemID.DirtBlock, 1);
-			recipe.AddTile(TileID.WorkBenches);
+			recipe.AddIngredient(ItemID.IronBar, 10);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 

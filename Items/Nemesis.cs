@@ -154,8 +154,8 @@ namespace CaveStory.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			//recipe.AddCraftGroup(CraftGroup.IronBar, 10);
-			recipe.AddIngredient(ItemID.DirtBlock, 1);
-			recipe.AddTile(TileID.WorkBenches);
+			recipe.AddIngredient(ItemID.IronBar, 10);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 

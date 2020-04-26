@@ -11,7 +11,7 @@ namespace CaveStory.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Fireball");
-			Tooltip.SetDefault("Cave Story weapon, level up by collecting Fireball Exps");
+			Tooltip.SetDefault("Bounces along the floor. Quite useful on slopes");
 		}
 
 		public override void SetDefaults()
@@ -334,8 +334,8 @@ namespace CaveStory.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			//recipe.AddCraftGroup(CraftGroup.IronBar, 10);
-			recipe.AddIngredient(ItemID.DirtBlock, 1);
-			recipe.AddTile(TileID.WorkBenches);
+			recipe.AddIngredient(ItemID.IronBar, 10);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 

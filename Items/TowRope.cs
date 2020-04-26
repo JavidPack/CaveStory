@@ -8,7 +8,7 @@ namespace CaveStory.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Tow Rope");
-			Tooltip.SetDefault("Use to tow a special robot");
+			Tooltip.SetDefault("A tow rope for a robot");
 		}
 
 		public override void SetDefaults()
@@ -27,9 +27,9 @@ namespace CaveStory.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.DirtBlock, 1);
+			recipe.AddIngredient(ItemID.IronBar, 10);
 			//recipe.AddCraftGroup(CraftGroup.IronBar, 10);
-			recipe.AddTile(TileID.WorkBenches);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
