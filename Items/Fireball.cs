@@ -23,7 +23,7 @@ namespace CaveStory.Items
 			item.width = 33;
 			item.height = 15;
 			item.shoot = mod.ProjectileType("FireballLv3Shot");
-			item.useAmmo = AmmoID.Bullet;
+			//item.useAmmo = AmmoID.Bullet;
 			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/FireballSound");
 			//  ErrorLogger.Log("~" + item.shoot);
 			item.damage = 45;
@@ -334,8 +334,8 @@ namespace CaveStory.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			//recipe.AddCraftGroup(CraftGroup.IronBar, 10);
-			recipe.AddRecipeGroup("IronBar", 10);
-			recipe.AddTile(TileID.Anvils);
+			recipe.AddIngredient(ItemID.DirtBlock, 1);
+			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 

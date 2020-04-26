@@ -39,7 +39,7 @@ namespace CaveStory.Items
 			item.shoot = mod.ProjectileType("BubbleProjectile");
 			//item.shoot = 444;
 			// 444 projectile defaults to Ai style 78, extraUpdates 1
-			item.useAmmo = AmmoID.Bullet;
+			//item.useAmmo = AmmoID.Bullet;
 			//Terraria.ID.ProjectileID.Bullet
 			//     item.glowMask = (short)38;
 			// where is the code to use this?
@@ -444,8 +444,8 @@ namespace CaveStory.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			//recipe.AddCraftGroup(CraftGroup.IronBar, 10);
-			recipe.AddRecipeGroup("IronBar", 10);
-			recipe.AddTile(TileID.Anvils);
+			recipe.AddIngredient(ItemID.DirtBlock, 1);
+			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 

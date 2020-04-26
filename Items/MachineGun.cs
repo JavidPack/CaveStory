@@ -8,10 +8,10 @@ namespace CaveStory.Items
 {
 	internal class MachineGun : ModItem
 	{
-		public override void SetStaticDefaults()
+	public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Machine Gun");
-			Tooltip.SetDefault("Cave Story weapon");
+			Tooltip.SetDefault("A very high-speed firearm. Its ammo recharges gradually");
 		}
 
 		public override void SetDefaults()
@@ -22,10 +22,9 @@ namespace CaveStory.Items
 			item.useAnimation = 9;
 			item.useTime = 8;
 			item.autoReuse = true;
-			item.width = 33;
-			item.height = 15;
+			item.width = 60;
+			item.height = 30;
 			item.shoot = mod.ProjectileType("MachineGunLv3Shot");
-			item.useAmmo = AmmoID.Bullet;
 			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/MachineGunShoot");
 			item.damage = 45;
 			item.shootSpeed = 12f; //12
@@ -43,27 +42,14 @@ namespace CaveStory.Items
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			if (speedX - speedY > 0)
-			{
-				if (speedX + speedY > 0)
+			if (speedY > 0)
+				if (player.gravDir == 1f)
 				{
-					speedX = item.shootSpeed;
-					speedY = (Main.rand.NextFloat() - .5f) * 1.4f;
+					player.velocity.Y -= 3.5f;
+					if (player.velocity.Y > 0)
+						player.velocity.Y = 0;
 				}
 				else
-				{
-					speedY = -item.shootSpeed;
-					speedX = (Main.rand.NextFloat() - .5f) * 1f;
-
-					if (player.gravDir == -1f)
-					{
-						player.velocity.Y += 3.5f;
-						if (player.velocity.Y < 0)
-							player.velocity.Y = 0;
-					}
-				}
-			}
-			else
 			{
 				if (speedX + speedY > 0)
 				{
@@ -286,14 +272,14 @@ namespace CaveStory.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			//recipe.AddCraftGroup(CraftGroup.IronBar, 10);
-			recipe.AddRecipeGroup("IronBar", 10);
-			recipe.AddTile(TileID.Anvils);
+			recipe.AddIngredient(ItemID.DirtBlock, 1);
+			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
 			//recipe = new ModRecipe(mod);
-			//recipe.AddIngredient(Terraria.ID.ItemID.DirtBlock, 1);
-			//recipe.SetResult(Terraria.ID.ItemID.IchorBullet, 999);
+			//recipe.AddIngredient(Terraria.ID.ItemID.DirtBlock);
+			//recipe.SetResult(mod, "FireballExp", 10);
 			//recipe.AddRecipe();
 		}
 	}

@@ -11,7 +11,7 @@ namespace CaveStory.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Nemesis");
-			Tooltip.SetDefault("Cave Story weapon");
+			Tooltip.SetDefault("Lightning of the Goddess");
 		}
 
 		public override void SetDefaults()
@@ -22,8 +22,7 @@ namespace CaveStory.Items
 			// item.autoReuse = true;
 			item.width = 33;
 			item.height = 15;
-			item.shoot = mod.ProjectileType<Projectiles.NemesisLv3Shot>();
-			item.useAmmo = AmmoID.Bullet;
+			item.shoot = mod.ProjectileType("NemesisLv3Shot");
 			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/NemesisSound");
 			//  ErrorLogger.Log("~" + item.shoot);
 			item.damage = 45;
@@ -154,11 +153,18 @@ namespace CaveStory.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddRecipeGroup("IronBar", 10);
 			//recipe.AddCraftGroup(CraftGroup.IronBar, 10);
-			recipe.AddTile(TileID.Anvils);
+			recipe.AddIngredient(ItemID.DirtBlock, 1);
+			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
+
+			//recipe = new ModRecipe(mod);
+			//recipe.AddIngredient(Terraria.ID.ItemID.DirtBlock);
+			//recipe.SetResult(mod, "FireballExp", 10);
+			//recipe.AddRecipe();
+
+
 		}
 	}
 }

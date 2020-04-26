@@ -27,9 +27,9 @@ namespace CaveStory.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddRecipeGroup("IronBar", 10);
+			recipe.AddIngredient(ItemID.DirtBlock, 1);
 			//recipe.AddCraftGroup(CraftGroup.IronBar, 10);
-			recipe.AddTile(TileID.Anvils);
+			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 

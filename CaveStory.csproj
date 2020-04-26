@@ -1,126 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\references\tModLoader.targets" />
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1DF88634-4874-484A-B972-688E618FD245}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cave Story</RootNamespace>
     <AssemblyName>CaveStory</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFramework>net45</TargetFramework>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="CaveStory.cs" />
-    <Compile Include="CaveStoryPlayer.cs" />
-    <Compile Include="Dusts\BoosterSmoke.cs" />
-    <Compile Include="Dusts\BubblineLv12Pop.cs" />
-    <Compile Include="Dusts\NemesisSmoke.cs" />
-    <Compile Include="Dusts\StarMuzzleFlash.cs" />
-    <Compile Include="Dusts\BubblinePop.cs" />
-    <Compile Include="Items\Banners\GreenCritterBanner.cs" />
-    <Compile Include="Items\Banners\RedBatBanner.cs" />
-    <Compile Include="Items\BoosterVPointEight.cs" />
-    <Compile Include="Items\Bubbline.cs" />
-    <Compile Include="Items\CaveStoryExperience.cs" />
-    <Compile Include="Items\Fireball.cs" />
-    <Compile Include="Items\MachineGun.cs" />
-    <Compile Include="Items\Nemesis.cs" />
-    <Compile Include="Items\TowRope.cs" />
-    <Compile Include="Items\WeaponUtilities.cs" />
-    <Compile Include="Mounts\CurlyBrace.cs" />
-    <Compile Include="NPCs\ExpDrop.cs" />
-    <Compile Include="NPCs\GreenCritter.cs" />
-    <Compile Include="NPCs\RedBat.cs" />
-    <Compile Include="Projectiles\BubbleProjectile.cs" />
-    <Compile Include="Projectiles\BubbleProjectileFlying.cs" />
-    <Compile Include="Projectiles\BubblineLv1Shot.cs" />
-    <Compile Include="Projectiles\BubblineLv2Shot.cs" />
-    <Compile Include="Projectiles\FireballLv1Shot.cs" />
-    <Compile Include="Projectiles\FireballLv2Shot.cs" />
-    <Compile Include="Projectiles\FireballLv3Shot.cs" />
-    <Compile Include="Projectiles\MachineGunLv3Shot.cs" />
-    <Compile Include="Projectiles\NemesisLv3Shot.cs" />
-    <Compile Include="Tiles\MonsterBanner.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="build.txt" />
-    <Content Include="description.txt" />
-    <Content Include="Sounds\Item\BoosterSound.wav" />
-    <Content Include="Sounds\Item\BubblineFire.wav" />
-    <Content Include="Sounds\Item\BubblinePopSound.wav" />
-    <Content Include="Sounds\Item\FireballSound.wav" />
-    <Content Include="Sounds\Item\MachineGunShoot.wav" />
-    <Content Include="Sounds\NPCHit\EnemyHurt.wav" />
-    <Content Include="Sounds\NPCHit\EnemyHurtBig.wav" />
-    <Content Include="Sounds\NPCHit\EnemyHurtCool.wav" />
-    <Content Include="Sounds\NPCHit\EnemyHurtSmall.wav" />
-    <Content Include="Sounds\NPCHit\EnemyHurtSqueak.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\XNA Framework Dlls\Microsoft.Xna.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\XNA Framework Dlls\Microsoft.Xna.Framework.Game.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\XNA Framework Dlls\Microsoft.Xna.Framework.Graphics.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\XNA Framework Dlls\Microsoft.Xna.Framework.Xact.dll</HintPath>
-    </Reference>
-    <Reference Include="ReLogic">
-      <HintPath>dllReferences\ReLogic.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="Terraria">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Terraria\Terraria.exe</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Sounds\Custom\" />
-    <Folder Include="Sounds\Music\" />
-    <Folder Include="Sounds\NPCKilled\" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>"C:\Program Files (x86)\Steam\steamapps\common\Terraria\tModLoaderServer.exe" -build "$(ProjectDir)\" -eac "$(TargetPath)"</PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
+  <Target Name="BuildMod" AfterTargets="Build">
+    <Exec Command="&quot;$(tMLBuildServerPath)&quot; -build $(ProjectDir) -eac $(TargetPath) -define $(DefineConstants) -unsafe $(AllowUnsafeBlocks)" />
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

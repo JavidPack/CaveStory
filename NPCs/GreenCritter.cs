@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using CaveStory.Items;
 
 namespace CaveStory.NPCs
 {
@@ -31,9 +32,9 @@ namespace CaveStory.NPCs
 			npc.noTileCollide = false;
 			npc.HitSound = mod.GetLegacySoundSlot(SoundType.NPCHit, "Sounds/NPCHit/EnemyHurtSqueak");
 			//npc.soundKilled = mod.GetSoundSlot(SoundType.NPCKilled, "Sounds/NPCKilled/???");
-			bannerItem = mod.ItemType("GreenCritterBanner");
-			bannerItem = mod.ItemType<Items.Banners.GreenCritterBanner>();
-			banner = npc.type;
+			//bannerItem = mod.ItemType("GreenCritterBanner");
+			//bannerItem = ModContent.ItemType<Banners.GreenCritterBanner>();
+			//banner = npc.type;
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
